@@ -17,8 +17,6 @@ const signUp = async (req,res) => {
         })
         const payload = {
             id: user.id,
-            firstName: user.firstName,
-            lastName:user.lastName,
             email: user.email
         }
 
@@ -28,4 +26,8 @@ const signUp = async (req,res) => {
         console.log('You made it to the sign-up controller, but there was an error')
         return res.status(400).json({error: error.message})
     }
+}
+
+module.exports = {
+    signUp
 }
