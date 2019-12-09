@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-let apiUrls
+let apiUrl 
 
 const apiUrls = {
     development: 'http://localhost:3000/api'
