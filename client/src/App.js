@@ -8,7 +8,6 @@ import Header from './components/shared/Header'
 import AvailableCoders from './components/routes/AvailableCoders';
 import SignUp from './components/routes/SignUp'
 
-
 function App() {
   return (
     <div className="App">
@@ -18,7 +17,6 @@ function App() {
      <Route exact path='/availablecoders' component={AvailableCoders} />
      <Route exact path='/sign-up' component={SignUp} />
      <Route exact path='/sign-in' component={SignIn} />
-
     </div> 
   );
 }
