@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const {coder, user} = require('../models')
+const {Coder, User} = require('../models')
 
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "ahj"
@@ -9,7 +9,7 @@ const signUp = async (req,res) => {
     try{
         const {firstName, lastName, email, password} =req.body
         const password_digest = await bcrypt.hash(password, SALT_ROUNDS)
-        const user = await user.create({
+        const user = await User.create({
             firstName,
             lastName,
             email,
