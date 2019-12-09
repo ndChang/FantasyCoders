@@ -16,7 +16,7 @@ module.exports = {
      firstName:'Andrew',
      lastName: 'Chang',
      email: 'ac@ga.com',
-     password: 'pass',
+     password_digest: 'pass',
      createdAt: new Date(),
      updatedAt: new Date()
    },
@@ -24,14 +24,14 @@ module.exports = {
     firstName:'Hadeeqa',
     lastName: 'Saman',
     email: 'hs@ga.com',
-    password: 'pass',
+    password_digest: 'pass',
     createdAt: new Date(),
     updatedAt: new Date()
   },{
     firstName:'Jowel',
     lastName: 'Rosario',
     email: 'jr@ga.com',
-    password: 'pass', createdAt: new Date(),
+    password_digest: 'pass', createdAt: new Date(),
     updatedAt: new Date()
   }] ,{})
   },
