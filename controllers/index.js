@@ -61,6 +61,11 @@ const getAllUsers = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 034f807324b888ddc873f14151250388f0fb1668
 const getRosterFromUser = async (req, res) => {
     try {
     //   const { user_id } = req.params
