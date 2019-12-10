@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import {Route, withRouter} from 'react-router-dom'
-import Home from './components/routes/Home'
-import SignIn from './components/routes/SignIn';
-import TeamRoster from './components/routes/TeamRoster';
+import Home from './components/screens/Home'
+import SignIn from './components/screens/SignIn';
+import TeamRoster from './components/screens/TeamRoster';
 import Header from './components/shared/Header'
-import AvailableCoders from './components/routes/AvailableCoders';
-import SignUp from './components/routes/SignUp'
+import AvailableCoders from './components/screens/AvailableCoders';
+import SignUp from './components/screens/SignUp'
 
 function App() {
   return (
@@ -21,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
