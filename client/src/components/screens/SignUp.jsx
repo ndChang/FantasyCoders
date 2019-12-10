@@ -1,7 +1,7 @@
 import React from 'react'
 import { signUp, signInUser } from '../../services/auth'
 
-// import './signUp.css'
+import './SignUp.css'
 
 
 class SignUp extends React.Component {
@@ -27,11 +27,12 @@ class SignUp extends React.Component {
     onSignup = event => {
         event.preventDefault()
 
-        const { history, setUser } = this.props
+
+        const { history, } = this.props
         signUp(this.state)
             .then(() => signInUser(this.state))
-            .then(res => setUser(res.user))
-            .then(() => history.push('/'))
+            // .then(res => setUser(res.user))
+            .then(() => history.push('/teamroster'))
             .catch(error => {
                 console.error(error)
                 this.setState({
@@ -54,7 +55,7 @@ class SignUp extends React.Component {
                 </button>
             )
         } else
-            return <button type="submit">Sign Up</button>
+            // return <button type="submit">Sign Up</button>
 
             return <button className="signup" type="submit">Sign Up</button>
     }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { signInUser } from '../../services/auth'
+import setUser from '../shared/Container'
 
 
 class SignIn extends React.Component {
@@ -17,11 +18,11 @@ class SignIn extends React.Component {
     }
     onSignIn = event => {
         event.preventDefault()
-        const { history, setUser } = this.props
+        const { history,  } = this.props
 
         signInUser(this.state)
-            .then(res => setUser(res.user))
-            .then(() => history.push('/'))
+            // .then(res => setUser(res.user))
+            .then(() => history.push('/teamroster'))
             .catch(error => {
                 console.error(error)
                 this.setState({
