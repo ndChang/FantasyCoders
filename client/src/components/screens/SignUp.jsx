@@ -1,6 +1,8 @@
 import React from 'react'
 import { signUp, signInUser } from '../../services/auth'
-import './SignUp.css'
+
+// import './signUp.css'
+
 
 class SignUp extends React.Component {
     constructor() {
@@ -40,7 +42,7 @@ class SignUp extends React.Component {
                     isError: true,
                     errorMsg: 'DETAILS INVALID'
                 })
-            })
+            }) 
     }
 
     renderError() {
@@ -52,6 +54,8 @@ class SignUp extends React.Component {
                 </button>
             )
         } else
+            return <button type="submit">Sign Up</button>
+
             return <button className="signup" type="submit">Sign Up</button>
     }
     render() {
@@ -72,7 +76,8 @@ class SignUp extends React.Component {
                             placeholder="First Name"
                             onChange={this.handleChange}
                         />
-                        <label>Last Name </label> 
+
+                        <label>Last Name </label>
                         <input
                             className="form-styling"
                             required
@@ -82,7 +87,8 @@ class SignUp extends React.Component {
                             placeholder="Last Name"
                             onChange={this.handleChange}
                         />
-                        <label>Email</label>
+
+                        <label>Email </label>
                         <input
                             className="form-styling"
                             required
@@ -92,7 +98,8 @@ class SignUp extends React.Component {
                             placeholder="Enter Your Email"
                             onChange={this.handleChange}
                         />
-                        <label>Password </label>
+
+                        <label>Password</label>
                         <input
                             className="form-styling"
                             required
