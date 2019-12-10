@@ -1,26 +1,27 @@
 import Axios from 'axios'
 
-let apiUrl 
+// Grab the JSON Web Token (JWT) from localStorage and set to a variable so we can send the token in the HTTP Header
+const jwtToken = localStorage.getItem('token') || null
+
+let apiUrl
 
 const apiUrls = {
-    development: 'http://localhost:3000/api'
+  production: 'https://sei-items-api.herokuapp.com/api',
+  development: 'http://localhost:3000/api'
 }
 
-if (window.location.hostname === 'localhost'){
-    apiUrl = apiUrls.development 
+if (window.location.hostname === 'localhost') {
+  apiUrl = apiUrls.development
 } else {
-    apiUrl = apiUrls.production 
+  apiUrl = apiUrls.production
 }
-
-
-const JwtToken = localStorage.getItem('token') || null
 
 const api = Axios.create({
-    baseUrl: apiUrl,
-    headers:{
-        Authorization: `Bearer ${JwtToken}`,
-        'Access-Control-Allow-Origin': '*'
-    }
+  baseURL: apiUrl,
+  headers: {
+    Authorization: `Bearer ${jwtToken}`,
+    'Access-Control-Allow-Origin': '*'
+  }
 })
 
 export default api
