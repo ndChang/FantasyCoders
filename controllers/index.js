@@ -81,15 +81,15 @@ const getRosterFromUser = async (req, res) => {
 
   const getCoderByUserId = async (req, res) => {
     try {
-      const { user_id, coder_id } = req.params
+      const { id} = req.params
+      console.log(req.params)
       const coder = await Coder.findOne({
         where: {
-        //   userId: user_id,
-          id: coder_id
+          id
         }
       })
       if (coder) {
-        return res.status(200).json({ item })
+        return res.status(200).json({ coder })
       }
       return res.status(404).send('Item with the specified ID does not exists')
     } catch (error) {
