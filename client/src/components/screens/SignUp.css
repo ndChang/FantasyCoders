@@ -54,6 +54,16 @@ form {
     align-items: center;
 }
 
+input {
+    color: white;
+}
+
+input:focus {
+    outline: none;
+    color: white;
+    font-weight: 800;
+}
+
 .form-styling {
     width: 80%;
     height: 35px;
@@ -89,4 +99,8 @@ h3 {
 	border-radius: 20px;
     margin-top: 10px;
     margin-bottom: 30px;
+}
+
+.signup:focus {
+    outline: none;
 }

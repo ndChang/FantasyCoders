@@ -8,16 +8,6 @@ class SignIn extends React.Component {
         this.state = ''
     }
 
-    render() {
-        return (
-            <h1>Sign in</h1>
-        this.state = {
-            email: '',
-            password: '',
-            isError: false,
-            errorMsg: ''
-        }
-    }
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value,
