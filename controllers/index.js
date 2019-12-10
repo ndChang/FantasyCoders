@@ -61,8 +61,50 @@ const getAllUsers = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
+<<<<<<< HEAD
 module.exports = {
   signUp,
   signIn,
   getAllUsers
 };
+=======
+
+const getRosterFromUser = async (req, res) => {
+    try {
+    //   const { user_id } = req.params
+      const coders = await Coder.findAll()
+      if (coders) {
+        return res.status(200).json({ coders })
+      }
+      return res.status(404).send('User with the specified ID does not exists')
+    } catch (error) {
+      return res.status(500).send(error.message)
+    }
+  }
+
+  const getCoderByUserId = async (req, res) => {
+    try {
+      const { id} = req.params
+      console.log(req.params)
+      const coder = await Coder.findOne({
+        where: {
+          id
+        }
+      })
+      if (coder) {
+        return res.status(200).json({ coder })
+      }
+      return res.status(404).send('Item with the specified ID does not exists')
+    } catch (error) {
+      return res.status(500).send(error.message)
+    }
+  }
+
+module.exports = {
+  signUp,
+  signIn,
+  getAllUsers,
+  getRosterFromUser,
+  getCoderByUserId
+};
+>>>>>>> 164a67080c5ff8a3bcffe6126baf037ca12cc615
