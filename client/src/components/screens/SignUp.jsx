@@ -1,10 +1,7 @@
 import React from 'react'
 import { signUp, signInUser } from '../../services/auth'
-<<<<<<< HEAD:client/src/components/screens/SignUp.jsx
-import './signup.css'
-=======
-import './SignUp.css'
->>>>>>> jowel-branch:client/src/components/routes/SignUp.jsx
+// import './signUp.css'
+
 
 class SignUp extends React.Component {
     constructor() {
@@ -57,11 +54,10 @@ class SignUp extends React.Component {
                 </button>
             )
         } else
-<<<<<<< HEAD:client/src/components/screens/SignUp.jsx
             return <button type="submit">Sign Up</button>
-=======
+
             return <button className="signup" type="submit">Sign Up</button>
->>>>>>> jowel-branch:client/src/components/routes/SignUp.jsx
+
     }
     render() {
         const { firstName, lastName, email, password } = this.state
@@ -82,11 +78,10 @@ class SignUp extends React.Component {
                             placeholder="First Name"
                             onChange={this.handleChange}
                         />
-<<<<<<< HEAD:client/src/components/screens/SignUp.jsx
+
                         <label>Last Name </label>
-=======
-                        <label>Last Name </label> 
->>>>>>> jowel-branch:client/src/components/routes/SignUp.jsx
+
+
                         <input
                             className="form-styling"
                             required
@@ -96,11 +91,9 @@ class SignUp extends React.Component {
                             placeholder="Last Name"
                             onChange={this.handleChange}
                         />
-<<<<<<< HEAD:client/src/components/screens/SignUp.jsx
+
                         <label>Email </label>
-=======
-                        <label>Email</label>
->>>>>>> jowel-branch:client/src/components/routes/SignUp.jsx
+
                         <input
                             className="form-styling"
                             required
@@ -110,11 +103,9 @@ class SignUp extends React.Component {
                             placeholder="Enter Your Email"
                             onChange={this.handleChange}
                         />
-<<<<<<< HEAD:client/src/components/screens/SignUp.jsx
+
                         <label>Password</label>
-=======
-                        <label>Password </label>
->>>>>>> jowel-branch:client/src/components/routes/SignUp.jsx
+
                         <input
                             className="form-styling"
                             required
@@ -127,11 +118,7 @@ class SignUp extends React.Component {
                        
                         {this.renderError()}
                     </form>
-<<<<<<< HEAD:client/src/components/screens/SignUp.jsx
-                
-=======
                     </div>
->>>>>>> jowel-branch:client/src/components/routes/SignUp.jsx
                 </div>
             </div>
         )
