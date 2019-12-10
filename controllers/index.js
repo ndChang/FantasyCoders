@@ -61,14 +61,6 @@ const getAllUsers = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
-<<<<<<< HEAD
-module.exports = {
-  signUp,
-  signIn,
-  getAllUsers
-};
-=======
-
 const getRosterFromUser = async (req, res) => {
     try {
     //   const { user_id } = req.params
@@ -107,4 +99,4 @@ module.exports = {
   getRosterFromUser,
   getCoderByUserId
 };
->>>>>>> 164a67080c5ff8a3bcffe6126baf037ca12cc615
+
