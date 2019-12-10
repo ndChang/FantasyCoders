@@ -1,9 +1,16 @@
 import React from 'react'
 import { signInUser } from '../../services/auth'
 
+
 class SignIn extends React.Component {
     constructor() {
         super()
+        this.state = ''
+    }
+
+    render() {
+        return (
+            <h1>Sign in</h1>
         this.state = {
             email: '',
             password: '',
