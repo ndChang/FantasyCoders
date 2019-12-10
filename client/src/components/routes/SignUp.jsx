@@ -1,5 +1,6 @@
 import React from 'react'
 import { signUp, signInUser } from '../../services/auth'
+import './signup.css'
 
 class SignUp extends React.Component {
     constructor() {
@@ -24,10 +25,10 @@ class SignUp extends React.Component {
     onSignup = event => {
         event.preventDefault()
 
-        const { history, setUser } = this.props
+        const { history } = this.props
         signUp(this.state)
             .then(() => signInUser(this.state))
-            .then(res => setUser(res.user))
+            // .then(res => setUser(res.user))
             .then(() => history.push('/'))
             .catch(error => {
                 console.error(error)
@@ -39,7 +40,8 @@ class SignUp extends React.Component {
                     isError: true,
                     errorMsg: 'DETAILS INVALID'
                 })
-            })
+            }) 
+          
     }
 
     renderError() {
@@ -51,13 +53,14 @@ class SignUp extends React.Component {
                 </button>
             )
         } else
-            return <button type="submit">Sign In</button>
+            return <button type="submit">Sign Up</button>
     }
     render() {
         const { firstName, lastName, email, password } = this.state
         return (
             <div className="signup-container">
                 <div className="signup-form">
+                   
                     <h3>Sign Up</h3>
                     <form onSubmit={this.onSignup}>
                         <label>First Name </label>
@@ -69,6 +72,7 @@ class SignUp extends React.Component {
                             placeholder="First Name"
                             onChange={this.handleChange}
                         />
+                        <label>Last Name </label>
                         <input
                             required
                             type="text"
@@ -77,6 +81,7 @@ class SignUp extends React.Component {
                             placeholder="Last Name"
                             onChange={this.handleChange}
                         />
+                        <label>Email </label>
                         <input
                             required
                             type="text"
@@ -85,6 +90,7 @@ class SignUp extends React.Component {
                             placeholder="Enter Your Email"
                             onChange={this.handleChange}
                         />
+                        <label>Password</label>
                         <input
                             required
                             type="text"
@@ -93,8 +99,10 @@ class SignUp extends React.Component {
                             placeholder="Enter a Password"
                             onChange={this.handleChange}
                         />
+                       
                         {this.renderError()}
                     </form>
+                
                 </div>
             </div>
         )

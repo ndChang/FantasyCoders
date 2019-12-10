@@ -1,10 +1,8 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { Coder, User } = require("../models");
-
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "ahj";
-
 const signUp = async (req, res) => {
   try {
     // console.log(req.connection)
@@ -16,12 +14,13 @@ const signUp = async (req, res) => {
       lastName,
       email,
       password_digest
+      
     });
+  
     const payload = {
         id: user.id,
         email: user.email
     }
-
     const token = jwt.sign(payload, TOKEN_KEY)
     return res.status(201).json({ user, token });
   } catch (error) {
@@ -31,7 +30,6 @@ const signUp = async (req, res) => {
     return res.status(400).json({ error: error.message });
   }
 };
-
 const signIn = async (req, res) => {
   try {
     console.log(req.body);
@@ -46,7 +44,6 @@ const signIn = async (req, res) => {
         id: user.id,
         email: user.email
       };
-
       const token = jwt.sign(payload, TOKEN_KEY);
       return res.status(201).json({ user, token });
     } else {
@@ -56,7 +53,6 @@ const signIn = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.findAll();
@@ -65,6 +61,7 @@ const getAllUsers = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
+
 
 const getRosterFromUser = async (req, res) => {
     try {
@@ -104,3 +101,4 @@ module.exports = {
   getRosterFromUser,
   getCoderByUserId
 };
+
