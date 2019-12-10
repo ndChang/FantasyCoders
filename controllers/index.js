@@ -68,8 +68,8 @@ const getAllUsers = async (req, res) => {
 
 const getRosterFromUser = async (req, res) => {
     try {
-      const { user_id } = req.params
-      const coders = await Coder.findAll({ where: { userId: user_id } })
+    //   const { user_id } = req.params
+      const coders = await Coder.findAll()
       if (coders) {
         return res.status(200).json({ coders })
       }
@@ -84,7 +84,7 @@ const getRosterFromUser = async (req, res) => {
       const { user_id, coder_id } = req.params
       const coder = await Coder.findOne({
         where: {
-          userId: user_id,
+        //   userId: user_id,
           id: coder_id
         }
       })
@@ -100,5 +100,7 @@ const getRosterFromUser = async (req, res) => {
 module.exports = {
   signUp,
   signIn,
-  getAllUsers
+  getAllUsers,
+  getRosterFromUser,
+  getCoderByUserId
 };
