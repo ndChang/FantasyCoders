@@ -10,6 +10,7 @@ class TeamRoster extends React.Component {
         <div className="teamroster">
             <h1>TEAM ROSTER</h1>
             <NavLink to= '/'>Home</NavLink>
+            <NavLink to='/availablecoders'>Available Coders</NavLink>
             </div>
         )
     }
