@@ -1,5 +1,6 @@
 import React from 'react'
 import { signInUser } from '../../services/auth'
+import setUser from '../shared/Container'
 
 class SignIn extends React.Component {
     constructor() {

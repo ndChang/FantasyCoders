@@ -1,11 +1,13 @@
 import React from 'react'
-import Layout from '../shared/Layout'
+// import Layout from '../shared/Layout'
+import Nav from '../shared/Nav'
 
 const Home = () => {
     return (
-        <Layout>
-            <h1>Home Page</h1>
-        </Layout>
+        <>
+      <Nav />
+    
+        </>
     )
 }
 export default Home 

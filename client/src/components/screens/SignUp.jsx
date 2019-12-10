@@ -1,6 +1,6 @@
 import React from 'react'
 import { signUp, signInUser } from '../../services/auth'
-import './signup.css'
+
 
 class SignUp extends React.Component {
     constructor() {
@@ -25,7 +25,7 @@ class SignUp extends React.Component {
     onSignup = event => {
         event.preventDefault()
 
-        const { history } = this.props
+        const { history, } = this.props
         signUp(this.state)
             .then(() => signInUser(this.state))
             // .then(res => setUser(res.user))
