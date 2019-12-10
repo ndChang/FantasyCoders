@@ -17,3 +17,12 @@ export const getRosterFromUser = async () => {
         throw error
     }
 }
+
+export const getCoders = async () => {
+    try {
+        const resp = await api.get('/coders')
+        return resp.data.coders
+    } catch (error){
+        throw(error)
+    }
+}
