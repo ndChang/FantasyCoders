@@ -2,16 +2,13 @@ import React from 'react'
 import { signInUser } from '../../services/auth'
 import setUser from '../shared/Container'
 
+
 class SignIn extends React.Component {
     constructor() {
         super()
-        this.state = {
-            email: '',
-            password: '',
-            isError: false,
-            errorMsg: ''
-        }
+        this.state = ''
     }
+
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value,
