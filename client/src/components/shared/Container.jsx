@@ -1,5 +1,5 @@
 import React from 'react'
-import Routes from '../routes'
+import Routes from '../screens'
 import Nav from '../shared/Nav'
 
 export default class Container extends React.Component {
