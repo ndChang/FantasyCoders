@@ -39,7 +39,8 @@ class SignUp extends React.Component {
                     isError: true,
                     errorMsg: 'DETAILS INVALID'
                 })
-            })
+            }) 
+          
     }
 
     renderError() {
@@ -69,6 +70,7 @@ class SignUp extends React.Component {
                             placeholder="First Name"
                             onChange={this.handleChange}
                         />
+                        <label>Last Name </label>
                         <input
                             required
                             type="text"
@@ -77,6 +79,7 @@ class SignUp extends React.Component {
                             placeholder="Last Name"
                             onChange={this.handleChange}
                         />
+                        <label>Email </label>
                         <input
                             required
                             type="text"
@@ -85,6 +88,7 @@ class SignUp extends React.Component {
                             placeholder="Enter Your Email"
                             onChange={this.handleChange}
                         />
+                        <label>Password</label>
                         <input
                             required
                             type="text"

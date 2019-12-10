@@ -1,10 +1,8 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { Coder, User } = require("../models");
-
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = "ahj";
-
 const signUp = async (req, res) => {
   try {
     // console.log(req.connection)
@@ -16,12 +14,13 @@ const signUp = async (req, res) => {
       lastName,
       email,
       password_digest
+      
     });
+  
     const payload = {
         id: user.id,
         email: user.email
     }
-
     const token = jwt.sign(payload, TOKEN_KEY)
     return res.status(201).json({ user, token });
   } catch (error) {
@@ -31,7 +30,6 @@ const signUp = async (req, res) => {
     return res.status(400).json({ error: error.message });
   }
 };
-
 const signIn = async (req, res) => {
   try {
     console.log(req.body);
@@ -46,7 +44,6 @@ const signIn = async (req, res) => {
         id: user.id,
         email: user.email
       };
-
       const token = jwt.sign(payload, TOKEN_KEY);
       return res.status(201).json({ user, token });
     } else {
@@ -56,7 +53,6 @@ const signIn = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.findAll();
@@ -65,9 +61,50 @@ const getAllUsers = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
-
+<<<<<<< HEAD
 module.exports = {
   signUp,
   signIn,
   getAllUsers
 };
+=======
+
+const getRosterFromUser = async (req, res) => {
+    try {
+    //   const { user_id } = req.params
+      const coders = await Coder.findAll()
+      if (coders) {
+        return res.status(200).json({ coders })
+      }
+      return res.status(404).send('User with the specified ID does not exists')
+    } catch (error) {
+      return res.status(500).send(error.message)
+    }
+  }
+
+  const getCoderByUserId = async (req, res) => {
+    try {
+      const { id} = req.params
+      console.log(req.params)
+      const coder = await Coder.findOne({
+        where: {
+          id
+        }
+      })
+      if (coder) {
+        return res.status(200).json({ coder })
+      }
+      return res.status(404).send('Item with the specified ID does not exists')
+    } catch (error) {
+      return res.status(500).send(error.message)
+    }
+  }
+
+module.exports = {
+  signUp,
+  signIn,
+  getAllUsers,
+  getRosterFromUser,
+  getCoderByUserId
+};
+>>>>>>> 164a67080c5ff8a3bcffe6126baf037ca12cc615
