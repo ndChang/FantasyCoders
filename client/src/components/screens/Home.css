@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 
 @media only screen and (max-width: 500px)  {
-.homeContainer {
+.navContainer {
     border: 1px solid black;
     background: url('../images/anothercircuitboard.png');
     background-repeat: no-repeat;
