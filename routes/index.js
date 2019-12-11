@@ -10,7 +10,8 @@ router.post('/sign-in', controllers.signIn)
 
 router.get('/users', controllers.getAllUsers)
 router.get('/coders', controllers.getRosterFromUser)
-router.get('/coders/:id', controllers.getCoderByUserId)
+router.get('/coders/:id', controllers.getCoderById)
+router.get('/users/:id/coders', controllers.getAllCodersByUserId)
 
 
 

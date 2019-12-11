@@ -14,7 +14,7 @@ module.exports = {
       expertise: {
         type: Sequelize.STRING
       },
-      rosterId: {
+      userId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
