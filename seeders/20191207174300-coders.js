@@ -18,18 +18,147 @@ module.exports = {
         {
           name: "Andrew Chang",
           expertise: "Javascript",
+          userId: null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: "Hadeeqa Saman",
           expertise: "Javascript",
+          userId: null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: "Jowel Rosario",
           expertise: "Javascript",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Jeanmax Deslouches",
+          expertise: "CSS",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "James White",
+          expertise: "SQL",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Frenchy French",
+          expertise: "Javascript",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Winston White",
+          expertise: "Python",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Ipsita Rao",
+          expertise: "CSS",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Rakshyak Kc",
+          expertise: "Javascript",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Philip Ryan",
+          expertise: "React",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Thomas Kang",
+          expertise: "CSS",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Roma Patel",
+          expertise: "HTML",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Andrew Kim",
+          expertise: "Javascript",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Jeremy Rose",
+          expertise: "Express",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Melissa Donegan",
+          expertise: "CSS",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "M.K Irvine",
+          expertise: "Fullstack",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Chris Abrams",
+          expertise: "Javascript",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Nyesha Viechweg",
+          expertise: "CSS",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Jordan Cruz-Correa",
+          expertise: "Fullstack",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Yevgeniy Drikman",
+          expertise: "Javascript",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Mick Roth",
+          expertise: "Fullstack",
+          userId: null,
           createdAt: new Date(),
           updatedAt: new Date()
         }

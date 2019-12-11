@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Press+Start+2P&display=swap');
+
+@media only screen and (max-width: 500px) {
+
+.header {
+    margin: 0 auto;
+    color: white;
+    opacity: 0.5;
+    background-color: #031E48;
+    padding: 2px;
+    font-family: 'Press Start 2P', cursive;
+
+}
+}
+
+.header {
+    margin: 0 auto;
+    color: white;
+    opacity: 0.5;
+    background-color: #031E48;
+    padding: 2px;
+    font-family: 'Press Start 2P', cursive;
+
+
+}

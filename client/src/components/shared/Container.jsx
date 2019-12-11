@@ -1,6 +1,10 @@
 import React from 'react'
-import Routes from '../screens'
-import Nav from '../shared/Nav'
+// import Nav from '../shared/Nav'
+// import TeamRoster from '../screens/TeamRoster'
+import Routes from '../routes'
+import { getCoders } from '../../services/items'
+import TeamRoster from '../screens/TeamRoster'
+
 
 export default class Container extends React.Component {
     constructor(props) {
@@ -22,7 +26,7 @@ export default class Container extends React.Component {
             console.error(err)
         }
     }
-    addCoder = coder => this.setState({ coder: [...this.state.coders, coders] })
+    addCoder = coder => this.setState({ coder: [...this.state.coders, coder] })
     setUser = user => this.setState({ user })
     clearUser = () => this.setState({ user: null })
 
@@ -30,7 +34,7 @@ export default class Container extends React.Component {
         const { user, coders } = this.state
         return (
             <>
-                <Nav user={user} />
+                <TeamRoster user={user} />
                 <main className="container">
                     <Routes
                         getCoders={this.getCoders}

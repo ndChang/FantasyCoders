@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Press+Start+2P&display=swap');
+
+@media only screen and (max-width: 500px) {
+.signup-container {
+    margin-top: 10%;
+    padding: 5%;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+}
+
+
+.signup-container {
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    background:
+        linear-gradient(
+        #031E48, #031E48);
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: solid 1px rgba(255,255,255,.5);
+    border-radius: 5px;
+    box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: all .5s ease;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    color: white;
+}
+
+input:focus {
+    outline: none;
+    color: white;
+    font-weight: 800;
+}
+
+.form-styling {
+    width: 80%;
+    height: 35px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,.2);
+
+}
+
+label {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    color: rgba(255,255,255,.7);
+    display: block;
+    font-style: bold
+}
+
+h3 {
+    color: rgba(255,255,255,.7);
+}
+
+.signup {
+    float: left;
+    padding-top: 8px;
+    width: 50%;
+    height: 35px;
+	border: none;
+	border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.signup:focus {
+    outline: none;
+}
