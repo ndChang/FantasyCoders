@@ -61,6 +61,7 @@ const getAllUsers = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
+
 const getRosterFromUser = async (req, res) => {
     try {
     //   const { user_id } = req.params
@@ -74,20 +75,40 @@ const getRosterFromUser = async (req, res) => {
     }
   }
 
-  const getCoderByUserId = async (req, res) => {
+  const getCoderById = async (req, res) => {
     try {
       const { id} = req.params
-      console.log(req.params)
+      console.log(id)
       const coder = await Coder.findOne({
         where: {
-          id
+          rosterId: id
         }
       })
+      
       if (coder) {
         return res.status(200).json({ coder })
       }
       return res.status(404).send('Item with the specified ID does not exists')
     } catch (error) {
+      return res.status(500).send(error.message)
+    }
+  }
+  const getAllCodersByUserId = async (req,res) => {
+    console.log("coder")
+    try{
+      const userRoster = await User.findAll({
+        where: {
+          id: req.params.id
+        },
+        include: [{
+          model: Coder
+        }]
+      })
+      if (userRoster) {
+        return res.status(200).json({ userRoster })
+      }
+      return res.status(404).send('Item with the specified ID does not exists')
+    }catch(error){
       return res.status(500).send(error.message)
     }
   }
@@ -97,6 +118,8 @@ module.exports = {
   signIn,
   getAllUsers,
   getRosterFromUser,
-  getCoderByUserId
+  getCoderById,
+  getAllCodersByUserId
+
 };
 
