@@ -14,7 +14,6 @@ const signUp = async (req, res) => {
       lastName,
       email,
       password_digest
-      
     });
   
     const payload = {
