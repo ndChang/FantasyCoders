@@ -18,18 +18,21 @@ module.exports = {
         {
           name: "Andrew Chang",
           expertise: "Javascript",
+          rosterId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: "Hadeeqa Saman",
           expertise: "Javascript",
+          rosterId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: "Jowel Rosario",
           expertise: "Javascript",
+          rosterId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         }

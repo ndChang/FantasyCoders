@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
         model: 'User',
         key: 'id',
         as: 'userId'
-      }
+      },
+      coder_id: DataTypes.INTEGER
     },
     coder_id: DataTypes.INTEGER
   }, {});
@@ -17,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'rosterId'
     })
     Roster.belongsTo(models.User, {
-      foreignKey: 'userId'
+      foreignKey: 'rosterId'
     })
   };
   return Roster;
