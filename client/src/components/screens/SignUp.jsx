@@ -1,6 +1,5 @@
 import React from 'react'
 import { signUp, signInUser } from '../../services/auth'
-
 import './SignUp.css'
 
 
@@ -55,7 +54,6 @@ class SignUp extends React.Component {
                 </button>
             )
         } else
-            // return <button type="submit">Sign Up</button>
 
             return <button className="signup" type="submit">Sign Up</button>
     }
@@ -104,7 +102,7 @@ class SignUp extends React.Component {
                         <input
                             className="form-styling"
                             required
-                            type="text"
+                            type="password"
                             name="password"
                             value={password}
                             placeholder="Enter a Password"

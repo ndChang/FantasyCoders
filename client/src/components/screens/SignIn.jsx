@@ -1,6 +1,8 @@
 import React from 'react'
 import { signInUser } from '../../services/auth'
+import './SignIn.css'
 import setUser from '../shared/Container'
+
 
 
 class SignIn extends React.Component {
@@ -44,7 +46,7 @@ class SignIn extends React.Component {
                 </button>
             )
         } else {
-            return <button type="submit">Sign</button>
+            return <button className="btn-signin" type="submit">Sign</button>
         }
     }
 
@@ -59,6 +61,7 @@ class SignIn extends React.Component {
                     <form onSubmit={this.onSignIn}>
                         <label>Email</label>
                         <input
+                            className="form-styling"
                             required
                             type="text"
                             name="email"
@@ -68,6 +71,7 @@ class SignIn extends React.Component {
                         />
                         <label>Password</label>
                         <input
+                            className="form-styling"
                             required
                             name="password"
                             value={password}
