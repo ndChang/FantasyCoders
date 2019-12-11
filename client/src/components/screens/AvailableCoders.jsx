@@ -23,12 +23,17 @@ class AvailableCoders extends React.Component {
   renderCoders = () => {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
-        return (
-          <div key={coder.id}>
-            <h4>{coder.name}</h4>
-            <h5>{coder.expertise}</h5>
-          </div>
-        );
+          if(coder.userId === null){
+            return (
+                <div key={coder.id}>
+                  <h4>{coder.name}</h4>
+                  <h5>{coder.expertise}</h5>
+                </div>
+              );
+          }else {
+              return null
+          }
+       
       });
     }else {
         return null
