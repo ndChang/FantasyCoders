@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from '../shared/Nav'
-import './Home.css'
+// import './Home.css'
 const Home = () => {
     return (
         <div className="homeContainer">
