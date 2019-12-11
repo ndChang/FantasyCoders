@@ -13,8 +13,8 @@ class AvailableCoders extends React.Component {
 
     async componentDidMount() {
         try {
-            const response = await axios(`http://localhost:3000/api/items`)
-            this.setState({ items: response.data.items })
+            const response = await axios.get(`http://localhost:3000/api/coders`)
+            this.setState({ coders: response.data.coders },  ()=> console.log(this.state.coders))
         } catch (err) {
             console.error(err)
         }
