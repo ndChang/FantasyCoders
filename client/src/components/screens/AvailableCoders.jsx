@@ -1,10 +1,14 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import axios from 'axios'
+
 
 class AvailableCoders extends React.Component{
     constructor() {
         super ()
-        this.state = ''
+        this.state = {
+            coders: []
+        }
     }
 
     render() {
