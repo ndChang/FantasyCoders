@@ -1,16 +1,16 @@
 import React from 'react'
 import { signInUser } from '../../services/auth'
+import './SignIn.css'
+import setUser from '../shared/Container'
+
+
 
 class SignIn extends React.Component {
     constructor() {
         super()
-        this.state = {
-            email: '',
-            password: '',
-            isError: false,
-            errorMsg: ''
-        }
+        this.state = ''
     }
+
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value,
@@ -20,11 +20,11 @@ class SignIn extends React.Component {
     }
     onSignIn = event => {
         event.preventDefault()
-        const { history, setUser } = this.props
+        const { history,  } = this.props
 
         signInUser(this.state)
-            .then(res => setUser(res.user))
-            .then(() => history.push('/'))
+            // .then(res => setUser(res.user))
+            .then(() => history.push('/teamroster'))
             .catch(error => {
                 console.error(error)
                 this.setState({
@@ -46,7 +46,7 @@ class SignIn extends React.Component {
                 </button>
             )
         } else {
-            return <button type="submit">Sign</button>
+            return <button className="btn-signin" type="submit">Sign</button>
         }
 
     }
@@ -62,6 +62,7 @@ class SignIn extends React.Component {
                     <form onSubmit={this.onSignIn}>
                         <label>Email</label>
                         <input
+                            className="form-styling"
                             required
                             type="text"
                             name="email"
@@ -71,6 +72,7 @@ class SignIn extends React.Component {
                         />
                         <label>Password</label>
                         <input
+                            className="form-styling"
                             required
                             name="password"
                             value={password}

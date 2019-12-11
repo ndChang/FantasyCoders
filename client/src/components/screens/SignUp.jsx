@@ -1,6 +1,6 @@
 import React from 'react'
 import { signUp, signInUser } from '../../services/auth'
-// import './signUp.css'
+import './SignUp.css'
 
 
 class SignUp extends React.Component {
@@ -26,11 +26,12 @@ class SignUp extends React.Component {
     onSignup = event => {
         event.preventDefault()
 
-        const { history } = this.props
+
+        const { history, } = this.props
         signUp(this.state)
             .then(() => signInUser(this.state))
             // .then(res => setUser(res.user))
-            .then(() => history.push('/'))
+            .then(() => history.push('/teamroster'))
             .catch(error => {
                 console.error(error)
                 this.setState({
@@ -42,7 +43,6 @@ class SignUp extends React.Component {
                     errorMsg: 'DETAILS INVALID'
                 })
             }) 
-          
     }
 
     renderError() {
@@ -54,17 +54,14 @@ class SignUp extends React.Component {
                 </button>
             )
         } else
-            return <button type="submit">Sign Up</button>
 
             return <button className="signup" type="submit">Sign Up</button>
-
     }
     render() {
         const { firstName, lastName, email, password } = this.state
         return (
             <div className="signup-container">
                 <div className="signup-form">
-                   
                     <h3>Sign Up</h3>
                     <div className="input-form">
                     <form onSubmit={this.onSignup}>
@@ -80,8 +77,6 @@ class SignUp extends React.Component {
                         />
 
                         <label>Last Name </label>
-
-
                         <input
                             className="form-styling"
                             required
@@ -93,7 +88,6 @@ class SignUp extends React.Component {
                         />
 
                         <label>Email </label>
-
                         <input
                             className="form-styling"
                             required
@@ -105,17 +99,15 @@ class SignUp extends React.Component {
                         />
 
                         <label>Password</label>
-
                         <input
                             className="form-styling"
                             required
-                            type="text"
+                            type="password"
                             name="password"
                             value={password}
                             placeholder="Enter a Password"
                             onChange={this.handleChange}
                         />
-                       
                         {this.renderError()}
                     </form>
                     </div>
