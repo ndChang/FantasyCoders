@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
-
+import './AvailableCoders.css'
 
 class AvailableCoders extends React.Component {
     constructor() {
@@ -20,11 +20,18 @@ class AvailableCoders extends React.Component {
         }
     }
 
+
+
     render() {
         return (
             <div className="availablecoders">
                 <h1>Available Coders</h1>
                 <NavLink to='/'>Home</NavLink>
+                <div className="coder-card">
+                    <h2>image</h2>
+                    <h1>fullname</h1>
+                    <h2>expertise</h2>
+                </div>
             </div>
         )
 

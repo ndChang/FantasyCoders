@@ -1,0 +1,6 @@
+.coder-card {
+    border: 2px solid red;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
