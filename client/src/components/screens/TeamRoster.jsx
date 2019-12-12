@@ -19,16 +19,12 @@ class TeamRoster extends React.Component {
                 </div>
                 <div className="rosterlogo">
                     <div className="teamlogo">
-                        <p>Team logo</p>
                     </div>
                     <div className="teamName">
                         <p>TEAM NAME:</p>
                         <p>TEAM OWNER:</p>
                     </div>
                 </div>
-                {/* <div className="team-logo">
-                    <img src="https://cms-assets.tutsplus.com/uploads/users/151/posts/32220/image/FB10.jpg" />
-                </div> */}
             </div>
         )
     }
