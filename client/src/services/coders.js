@@ -29,7 +29,19 @@ export const getCoders = async () => {
 
 export const updateRoster = async () => {
     try {
-        const resp = await api.put(`./users:${id}/coders:${id}`)
+        const resp = await api.put(`/users:${id}/coders/${id}`)
         return resp.data
+    } catch (error){
+        throw(error)
+    }
+}
+
+export const updateCoder = async () => {
+    try {
+        const resp = await api.put(`/coders/${coder_id}`)
+        // body user id
+        return resp.data
+    } catch (error){
+        throw(error)
     }
 }

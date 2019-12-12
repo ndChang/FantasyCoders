@@ -13,6 +13,7 @@ router.get('/coders', controllers.getRosterFromUser)
 router.get('/coders/:id', controllers.getCoderById)
 router.get('/users/:id/coders', controllers.getAllCodersByUserId)
 router.put('/users/:id/coders/:coder_id', controllers.updateRoster)
+router.put('/coders/:id', controllers.updateCoder)
 
 
 
