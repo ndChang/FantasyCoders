@@ -28,10 +28,8 @@ class SignUp extends React.Component {
 
 
         const { history, } = this.props
-        signUp(this.state)
-            .then(() => signInUser(this.state))
-            // .then(res => setUser(res.user))
-            .then(() => history.push('/teamroster'))
+        // signUp(this.state).then(() => signInUser(this.state)).then(res => setUser(res.user)).then(() => history.push('/users'))
+        signUp(this.state).then(() => signInUser(this.state)).then((result) => history.push(`/users/${result.user.id}/coders`))
             .catch(error => {
                 console.error(error)
                 this.setState({
