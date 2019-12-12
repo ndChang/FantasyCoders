@@ -43,7 +43,7 @@ module.exports = {
           name: "Jeanmax Deslouches",
           expertise: "CSS",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C4D03AQG0KtpIcA48Gw/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=8X1gcKXuY3DCIs_sXiXN96tcCMqmZzD1OxpwULsigps",
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -51,7 +51,7 @@ module.exports = {
           name: "James White",
           expertise: "SQL",
           userId: null,
-          img:null,
+          img: "https://media.licdn.com/dms/image/C4D03AQE-TdcwSkWvtg/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=qZaM14J76mGbBFeTYUR9wSQb9Is0SaqjimaHuJJ2gfk",
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -59,7 +59,7 @@ module.exports = {
           name: "Frenchy French",
           expertise: "Javascript",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C4D03AQGtzoBGOjtt_A/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=TqWhHvh9u2R6zKH7OWZVgBy24pP2Yjxu1MZqbEozLHY",
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -67,7 +67,7 @@ module.exports = {
           name: "Winston White",
           expertise: "Python",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C4D03AQHWtBlcZ4zMLw/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=WQj-sqjnIo7hCJPKArPP_111x5lOno4Mwa39pEvIEZ8",
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -75,7 +75,7 @@ module.exports = {
           name: "Ipsita Rao",
           expertise: "CSS",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C5603AQHadWc4tuW3jA/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=gPkMJFvrQUsUyXvgqjauOqOUQrZil1m28z9K9FMfotw",
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -83,7 +83,7 @@ module.exports = {
           name: "Rakshyak Kc",
           expertise: "Javascript",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C4E03AQF2Ec3ssQ1-uA/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=4thdfavncstO9Uy7dO-Gsl1wKHpfs-FLdeiBFBjaMJc",
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -91,7 +91,7 @@ module.exports = {
           name: "Philip Ryan",
           expertise: "React",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C4E03AQEfc6KOqqXi1A/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=l_tRos6ejn0qlJY6FRAhQODPVsWWv5g7CqeYQth1CSo",
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -99,7 +99,7 @@ module.exports = {
           name: "Thomas Kang",
           expertise: "CSS",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C4E03AQFZEDaq004HkA/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=rnQghEL_UFFLHJuH94hLINjJcbe9WRZAX5ptqK9_5PY",
           createdAt: new Date(),
           updatedAt: new Date()
         },
