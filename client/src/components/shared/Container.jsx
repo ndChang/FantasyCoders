@@ -1,9 +1,6 @@
 import React from 'react'
-// import Nav from '../shared/Nav'
-// import TeamRoster from '../screens/TeamRoster'
 import Routes from '../routes'
 import { getCoders } from '../../services/items'
-import TeamRoster from '../screens/TeamRoster'
 
 
 export default class Container extends React.Component {

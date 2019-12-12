@@ -86,13 +86,15 @@ class TeamRoster extends React.Component {
             <NavLink className="availablecoders" to="/availablecoders">
               Available Coders
             </NavLink>
+            <NavLink className="signout"to="/sign-out">Sign Out</NavLink>
           </div>
         </div>
+      <hr></hr>
         <div className="rosterlogo">
           <div className="teamlogo"></div>
           <div className="teamName">
-            <p>TEAM NAME: {this.props.user.email}</p>
-            <p>TEAM OWNER:{this.props.user.firstName}</p>
+            <p><span>TEAM NAME:</span> {this.props.user.email}</p>
+            <p><span>TEAM OWNER:</span> {this.props.user.firstName}</p>
           </div>
         </div>
         <div className="team-text">
