@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import './AvailableCoders.css'
+import Header from '../shared/Header'
 
 
 class AvailableCoders extends React.Component {
@@ -25,7 +26,7 @@ class AvailableCoders extends React.Component {
 
   renderBotton = id => {
     return ( 
-        <button onClick={() => this.props.history.push(`teamroster/`)}>Add to roster</button>
+        <button onClick={() => this.props.history.push(`/`)}>Add to roster</button>
     )
   }
   renderCoders = () => {
@@ -66,9 +67,10 @@ class AvailableCoders extends React.Component {
   render() {
     return (
       <div className="availablecoders">
+        <Header />
+         <NavLink to="/">Home</NavLink>
         <h1>Available Coders</h1>
         {this.listCoders()}
-        <NavLink to="/">Home</NavLink>
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./TeamRoster.css";
 import Axios from "axios";
+import Header from '../shared/Header'
 
 class TeamRoster extends React.Component {
   constructor() {
@@ -12,12 +13,11 @@ class TeamRoster extends React.Component {
   }
 
   async componentDidMount() {
-    console.log(this.props.history.location.pathname);
-    // /users/5/coders
     try {
       const response = await Axios.get(
-        `http://localhost:3000/api${this.props.history.location.pathname}`
+        `http://localhost:3000/api/users/${this.props.user.id}/coders`
       );
+      console.log(response)
       let coders = response.data.userRoster[0].Coders;
       if (coders) {
         this.setState({ coders });
@@ -63,8 +63,10 @@ class TeamRoster extends React.Component {
   };
 
   render() {
+
     return (
       <div className="teamroster-container">
+        <Header />
         <div className="teamroster">
           <h1>TEAM ROSTER</h1>
           <div className="rosterlinks">
