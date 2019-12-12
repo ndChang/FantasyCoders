@@ -3,7 +3,7 @@ import { NavLink, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import './AvailableCoders.css'
 import Header from '../shared/Header'
-import {updateCoder} from '../../services/coders'
+import { updateCoder } from '../../services/coders'
 
 
 class AvailableCoders extends React.Component {
@@ -11,8 +11,8 @@ class AvailableCoders extends React.Component {
     super();
     this.state = {
       coders: [],
-      updated:false
-    } 
+      updated: false
+    }
   }
 
   async componentDidMount() {
@@ -27,38 +27,22 @@ class AvailableCoders extends React.Component {
   }
 
   renderButton = id => {
-    const {user} = this.props
-    if(user){
+    const { user } = this.props
+    if (user) {
       return (
         <button onClick={(e) => {
-          // console.log("the user id is",user.id)
-          // console.log("the coder id is ", id)
+          console.log("the user id is", user.id)
+          console.log("the coder id is ", id)
           
           updateCoder(id, user).then(() => {
             this.forceUpdate()
             this.props.history.push(`/`)
         })
         }}>Add to roster</button>
-    ) 
-    }else{
+      )
+    } else {
       return null
     }
-  }
-
-  handleChange = event => {
-    const updatedField = { [event.target.fullname]: event.target.value }
-
-    const editedItem = Object.assign(this.state.item, updatedField)
-
-    this.setState({ item: editedItem })
-  }
-
-  handleSubmit = event => {
-    // event.preventDefault()
-
-    updateCoder(this.props.params.id)
-      .then(() => this.setStatus({ updated: true }))
-      .catch(console.error)
   }
 
   renderCoders = () => {
@@ -98,13 +82,17 @@ class AvailableCoders extends React.Component {
 
   render() {
     return (
-      <div className="availablecoders">
+      <div className="availablecoders-container">
         <Header />
-         <NavLink to="/">Home</NavLink>
-        <h1>Available Coders</h1>
-        <hr></hr>
-       {this.listCoders()}
-    
+        <div className="availablecoders">
+          <h1>Available Coders</h1>
+          <div className='coderlinks'>
+            <NavLink className="home" to="/">Home</NavLink>
+            <NavLink className="signout" to="/sign-out">Sign Out</NavLink>
+          </div>
+          <hr></hr>
+          {this.listCoders()}
+        </div>
       </div>
     );
   }

@@ -29,7 +29,7 @@ class TeamRoster extends React.Component {
       console.error(error);
     }
   }
-  renderBotton = id => {
+  renderButton = id => {
     const reset = {
       id: 0
     };
@@ -51,11 +51,11 @@ class TeamRoster extends React.Component {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
         return (
-          <div className="coder-card" key={coder.id}>
+          <div className="coderList" key={coder.id}>
             <img src={coder.img} alt="profile picture" />
             <h4>{coder.name}</h4>
             <h5>{coder.expertise}</h5>
-            {this.renderBotton(coder.id)}
+            {this.renderButton(coder.id)}
           </div>
         );
       });
@@ -68,7 +68,7 @@ class TeamRoster extends React.Component {
     return (
       <>
         {!coders.length ? <h3> All coders hired</h3> : null}
-        <div>{this.renderCoders()}</div>
+        <div className="coder-container">{this.renderCoders()}</div>
       </>
     );
   };
@@ -86,15 +86,23 @@ class TeamRoster extends React.Component {
             <NavLink className="availablecoders" to="/availablecoders">
               Available Coders
             </NavLink>
+            <NavLink className="signout"to="/sign-out">Sign Out</NavLink>
           </div>
         </div>
+      <hr></hr>
         <div className="rosterlogo">
           <div className="teamlogo"></div>
           <div className="teamName">
-            <p>TEAM NAME: {this.props.user.email}</p>
-            <p>TEAM OWNER:{this.props.user.firstName}</p>
+            <p><span>TEAM NAME:</span> {this.props.user.email}</p>
+            <p><span>TEAM OWNER:</span> {this.props.user.firstName}</p>
           </div>
-          <div>{this.listCoders()}</div>
+        </div>
+        <div className="team-text">
+          <h2>Your TEAM</h2>
+        </div>
+        <hr></hr>
+        <div>{
+          this.listCoders()}
         </div>
       </div>
     );
