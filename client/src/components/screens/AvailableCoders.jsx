@@ -1,6 +1,8 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import axios from "axios";
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import axios from 'axios'
+import './AvailableCoders.css'
+
 
 class AvailableCoders extends React.Component {
   constructor() {
@@ -31,7 +33,7 @@ class AvailableCoders extends React.Component {
       return this.state.coders.map(coder => {
           if(coder.userId === null){
             return (
-                <div key={coder.id}>
+                <div className="coder-card" key={coder.id}>
                   <h4>{coder.name}</h4>
                   <h5>{coder.expertise}</h5>
                   {this.renderBotton(coder.id)}
@@ -58,6 +60,7 @@ class AvailableCoders extends React.Component {
       </>
     );
   };
+
 
   render() {
     return (
