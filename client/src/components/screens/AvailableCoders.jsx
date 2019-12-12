@@ -10,8 +10,9 @@ class AvailableCoders extends React.Component {
   constructor() {
     super();
     this.state = {
-      coders: []
-    };
+      coders: [],
+      updated:false
+    } 
   }
 
   async componentDidMount() {
@@ -27,7 +28,6 @@ class AvailableCoders extends React.Component {
 
   renderButton = id => {
     const {user} = this.props
-    // console.log("the props are:",this.props)
     if(user){
       return (
         <button onClick={(e) => {
@@ -41,6 +41,23 @@ class AvailableCoders extends React.Component {
       return null
     }
   }
+
+  handleChange = event => {
+    const updatedField = { [event.target.fullname]: event.target.value }
+
+    const editedItem = Object.assign(this.state.item, updatedField)
+
+    this.setState({ item: editedItem })
+  }
+
+  handleSubmit = event => {
+    // event.preventDefault()
+
+    updateCoder(this.props.params.id)
+      .then(() => this.setStatus({ updated: true }))
+      .catch(console.error)
+  }
+
   renderCoders = () => {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
@@ -55,13 +72,13 @@ class AvailableCoders extends React.Component {
               );
 
 
-          }else {
-              return null
-          }
-       
+        } else {
+          return null
+        }
+
       });
-    }else {
-        return null
+    } else {
+      return null
     }
   };
 
@@ -70,7 +87,7 @@ class AvailableCoders extends React.Component {
     return (
       <>
         {!coders.length ? <h3> All coders hired</h3> : null}
-        <div>{this.renderCoders()}</div>
+        <div className="rendercode">{this.renderCoders()}</div>
       </>
     );
   };
@@ -82,7 +99,9 @@ class AvailableCoders extends React.Component {
         <Header />
          <NavLink to="/">Home</NavLink>
         <h1>Available Coders</h1>
-        {this.listCoders()}
+        <hr></hr>
+       {this.listCoders()}
+    
       </div>
     );
   }
