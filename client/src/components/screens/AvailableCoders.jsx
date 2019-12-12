@@ -22,6 +22,12 @@ class AvailableCoders extends React.Component {
       console.error(err);
     }
   }
+
+  renderBotton = id => {
+    return ( 
+        <button onClick={() => this.props.history.push(`teamroster/`)}>Add to roster</button>
+    )
+  }
   renderCoders = () => {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
@@ -30,10 +36,11 @@ class AvailableCoders extends React.Component {
                 <div className="coder-card" key={coder.id}>
                   <h4>{coder.name}</h4>
                   <h5>{coder.expertise}</h5>
+                  {this.renderBotton(coder.id)}
                 </div>
               );
 
-              
+
           }else {
               return null
           }
