@@ -1,6 +1,7 @@
 import React from 'react'
 import { signUp, signInUser } from '../../services/auth'
 import './SignUp.css'
+import Header from '../shared/Header'
 
 
 class SignUp extends React.Component {
@@ -27,9 +28,12 @@ class SignUp extends React.Component {
         event.preventDefault()
 
 
-        const { history, } = this.props
+        const { history, setUser } = this.props
         // signUp(this.state).then(() => signInUser(this.state)).then(res => setUser(res.user)).then(() => history.push('/users'))
-        signUp(this.state).then(() => signInUser(this.state)).then((result) => history.push(`/users/${result.user.id}/coders`))
+        signUp(this.state).then(() => signInUser(this.state)).then(res => {setUser(res.user)
+            // history.push(`/users/${res.user.id}/coders`)
+            history.push('/')
+        })
             .catch(error => {
                 console.error(error)
                 this.setState({
@@ -58,7 +62,7 @@ class SignUp extends React.Component {
     render() {
         const { firstName, lastName, email, password } = this.state
         return (
-            <div className="signup-container">
+            <div className="signup-container">  
                 <div className="signup-form">
                     <h3>Sign Up</h3>
                     <div className="input-form">
