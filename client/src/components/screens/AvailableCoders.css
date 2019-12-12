@@ -1,16 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+.try {
+    border: 2px solid orange;
+    display: flex;
+    
+
+}
 .coder-card {
     border: 2px solid red;
-    /* width: 40%; */
     display: flex;
     flex-direction: column;
     margin-bottom: 10%;
 }
 .coder-container  {
     border: 2px solid black;
-    width: 40%;
     
 }
-.try {
-    border: 2px solid orange;
-    
+.availablecoders {
+    font-family: 'Righteous', cursive;
 }
+
