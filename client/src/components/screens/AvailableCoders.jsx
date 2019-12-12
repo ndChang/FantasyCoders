@@ -3,14 +3,16 @@ import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import './AvailableCoders.css'
 import Header from '../shared/Header'
+import {updateCoder} from '../../services/coders'
 
 
 class AvailableCoders extends React.Component {
   constructor() {
     super();
     this.state = {
-      coders: []
-    };
+      coders: [],
+      updated:false
+    } 
   }
 
   async componentDidMount() {
@@ -24,25 +26,50 @@ class AvailableCoders extends React.Component {
     }
   }
 
-  renderBotton = id => {
-    return ( 
-        <button onClick={() => this.props.history.push(`/`)}>ADD TO ROSTER</button>
-    )
+  renderButton = id => {
+    const {user} = this.props
+    if(user){
+      return (
+        <button onClick={(e) => {
+          console.log("the user id is",user.id)
+          console.log("the coder id is ", id)
+          updateCoder(id, user).then(()=> console.log("updated coder"))
+          this.props.history.push(`/`)
+        }}>Add to roster</button>
+    ) 
+    }else{
+      return null
+    }
   }
+
+  handleChange = event => {
+    const updatedField = { [event.target.fullname]: event.target.value }
+
+    const editedItem = Object.assign(this.state.item, updatedField)
+
+    this.setState({ item: editedItem })
+  }
+
+  handleSubmit = event => {
+    // event.preventDefault()
+
+    updateCoder(this.props.params.id)
+      .then(() => this.setStatus({ updated: true }))
+      .catch(console.error)
+  }
+
   renderCoders = () => {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
-        if (coder.userId === null) {
-          return (
-            <div className="coder-container">
-              <div className="coder-card" key={coder.id}>
-                <img src={coder.img} alt="profile picture" />
-                <p>Name: {coder.name}</p>
-                <p>Expertise: {coder.expertise}</p>
-                {this.renderBotton(coder.id)}
-              </div>
-            </div>
-          );
+          if(coder.userId === null){
+            return (
+                <div className="coder-card" key={coder.id}>
+                    <img src={coder.img} alt="profile picture"/>
+                  <h4>{coder.name}</h4>
+                  <h5>{coder.expertise}</h5>
+                  {this.renderButton(coder.id)}
+                </div>
+              );
 
 
         } else {

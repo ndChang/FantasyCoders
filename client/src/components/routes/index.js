@@ -20,7 +20,7 @@ const Routes = ({ user, setUser, coder, clearUser }) => (
       path="/"
       render={props => (user ? <TeamRoster {...props} user={user} coder = {coder}/> : <Home />)}
     />
-    <Route exact path="/availablecoders" component={AvailableCoders} />
+    <Route exact path="/availablecoders" render= {props => (user ? <AvailableCoders {...props} user={user}/> : <AvailableCoders />)}/>
     <Route
       exact
       path="/sign-up"
