@@ -7,6 +7,7 @@ const Nav = () => {
           <div className="navContainer">
             <NavLink className="signUp" to='/sign-up'>Sign Up</NavLink>
             <NavLink className="signIn" to='/sign-in'>Sign In</NavLink>
+            <NavLink to="/sign-out">Sign Out</NavLink>
           </div>
         </div>
       )

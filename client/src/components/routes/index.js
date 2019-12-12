@@ -6,8 +6,9 @@ import TeamRoster from "../screens/TeamRoster";
 import AvailableCoders from "../screens/AvailableCoders";
 import SignUp from "../screens/SignUp";
 import AuthenticatedRoute from './AuthenticatedRoute'
+import SignOut from '../screens/SignOut'
 
-const Routes = (user, setUser, coder) => (
+const Routes = (user, setUser, coder, clearUser) => (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route exact path="/availablecoders" component={AvailableCoders} />
@@ -20,6 +21,11 @@ const Routes = (user, setUser, coder) => (
       exact
       path="/sign-in"
       render={props => <SignIn {...props} setUser={setUser} />}
+    />
+    <Route
+      exact
+      path="/sign-out"
+      render={props => <SignOut {...props} clearUser={clearUser} user={user} />}
     />
     <AuthenticatedRoute
       exact

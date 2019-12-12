@@ -19,7 +19,7 @@ module.exports = {
           name: "Andrew Chang",
           expertise: "Javascript",
           userId: null,
-          img:null,
+          img: "https://media.licdn.com/dms/image/C4E03AQGvEl3EQi0akQ/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=LmD2u4ChIm545IV2X5xtdfG_hprAPD3r_uHDH0rjEYY",
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -27,7 +27,7 @@ module.exports = {
           name: "Hadeeqa Saman",
           expertise: "Javascript",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C5603AQHTNy3kmljYPQ/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=Fv090dBa3Z8dtoQ-Z9J9Rkq6f1WOfStmyVBSpasgXts",
           createdAt: new Date(),
           updatedAt: new Date()
         },
