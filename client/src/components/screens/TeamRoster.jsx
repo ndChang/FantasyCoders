@@ -80,8 +80,8 @@ class TeamRoster extends React.Component {
         <div className="rosterlogo">
           <div className="teamlogo"></div>
           <div className="teamName">
-            <p>TEAM NAME:</p>
-            <p>TEAM OWNER:</p>
+            <p>TEAM NAME: {this.props.user.email}</p>
+            <p>TEAM OWNER:{this.props.user.firstName}</p>
           </div>
           <div>{this.listCoders()}</div>
         </div>
