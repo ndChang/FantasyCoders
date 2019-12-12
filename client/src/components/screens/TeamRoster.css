@@ -166,3 +166,8 @@ hr {
     margin: auto;
     padding: auto;
 }
+
+.teamName span {
+    text-decoration: underline;
+    color:#00437f
+}
