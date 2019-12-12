@@ -34,6 +34,7 @@ class AvailableCoders extends React.Component {
           if(coder.userId === null){
             return (
                 <div className="coder-card" key={coder.id}>
+                    <img src={coder.img} alt="profile picture"/>
                   <h4>{coder.name}</h4>
                   <h5>{coder.expertise}</h5>
                   {this.renderBotton(coder.id)}
