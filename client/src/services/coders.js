@@ -26,3 +26,10 @@ export const getCoders = async () => {
         throw(error)
     }
 }
+
+export const updateRoster = async () => {
+    try {
+        const resp = await api.put(`./users:${id}/coders:${id}`)
+        return resp.data
+    }
+}
