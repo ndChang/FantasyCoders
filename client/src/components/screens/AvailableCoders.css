@@ -8,9 +8,9 @@
 .coder-container  {
     border: 2px solid black;
     width: 40%;
-    margin: 0px
+    
 }
 .try {
+    border: 2px solid orange;
     
-    border: 2px solid orange
 }
