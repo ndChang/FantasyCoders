@@ -1,6 +1,7 @@
 import React from 'react'
 import { signUp, signInUser } from '../../services/auth'
 import './SignUp.css'
+import Header from '../shared/Header'
 
 
 class SignUp extends React.Component {
@@ -61,7 +62,7 @@ class SignUp extends React.Component {
     render() {
         const { firstName, lastName, email, password } = this.state
         return (
-            <div className="signup-container">
+            <div className="signup-container">  
                 <div className="signup-form">
                     <h3>Sign Up</h3>
                     <div className="input-form">
