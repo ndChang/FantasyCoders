@@ -35,7 +35,7 @@ module.exports = {
           name: "Jowel Rosario",
           expertise: "Javascript",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C4D03AQFJ9vUHp_op1A/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=NBstVDpl85embaMmwBZiEsqcsw5_ZJMPnVkM-qLPlTM",
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -171,7 +171,7 @@ module.exports = {
           name: "Yevgeniy Drikman",
           expertise: "Javascript",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C4D03AQHcQlwq8olguQ/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=cIA4pAZYVEsAi37T3uKSCQM7Uf369ttSXedfEDt8M9M",
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -187,7 +187,7 @@ module.exports = {
           name: "Marilyn Shi",
           expertise: "UX/CSS",
           userId: null,
-          img:null,
+          img:"https://media.licdn.com/dms/image/C4D03AQGOw00TkH01LQ/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=IJ1KMQVUhvzfSuUJxpsZ9OLY5mL9EO_25j6mymNHdI0",
           createdAt: new Date(),
           updatedAt: new Date()
         }
