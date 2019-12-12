@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import './AvailableCoders.css'
 import Header from '../shared/Header'
@@ -31,8 +31,13 @@ class AvailableCoders extends React.Component {
     if(user){
       return (
         <button onClick={(e) => {
-          updateCoder(id, user).then(()=> console.log("updated coder"))
-          this.props.history.push(`/`)
+          console.log("the user id is",user.id)
+          console.log("the coder id is ", id)
+          
+          updateCoder(id, user).then(() => {
+            this.forceUpdate()
+            this.props.history.push(`/`)
+        })
         }}>Add to roster</button>
     ) 
     }else{

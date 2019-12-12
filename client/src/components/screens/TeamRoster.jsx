@@ -2,8 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./TeamRoster.css";
 import Axios from "axios";
-import Header from '../shared/Header'
-import { updateCoder } from '../../services/coders'
+import Header from "../shared/Header";
+import { updateCoder } from "../../services/coders";
 
 class TeamRoster extends React.Component {
   constructor() {
@@ -29,12 +29,20 @@ class TeamRoster extends React.Component {
       console.error(error);
     }
   }
-  renderBotton = id => {
+  renderButton = id => {
     const reset = {
       id: 0
-    }
+    };
     return (
-      <button onClick={(e) => { updateCoder(id, reset).then(() => console.log("updated coder")) }}>
+      <button
+        onClick={e => {
+          updateCoder(id, reset).then(() => {
+            this.forceUpdate();
+            this.props.history.push('/buffer')
+            this.props.history.push(`/`);
+          });
+        }}
+      >
         Remove from Roster
       </button>
     );
@@ -47,6 +55,7 @@ class TeamRoster extends React.Component {
             <img src={coder.img} alt="profile picture" />
             <h4>{coder.name}</h4>
             <h5>{coder.expertise}</h5>
+            {this.renderButton(coder.id)}
           </div>
         );
       });
