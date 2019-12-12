@@ -40,11 +40,11 @@ class TeamRoster extends React.Component {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
         return (
-          <div className="coder-card" key={coder.id}>
+
+          <div className="coderList" key={coder.id}>
             <img src={coder.img} alt="profile picture" />
             <h4>{coder.name}</h4>
             <h5>{coder.expertise}</h5>
-            {this.renderBotton(coder.id)}
           </div>
         );
       });
@@ -57,7 +57,7 @@ class TeamRoster extends React.Component {
     return (
       <>
         {!coders.length ? <h3> All coders hired</h3> : null}
-        <div>{this.renderCoders()}</div>
+        <div className="coder-container">{this.renderCoders()}</div>
       </>
     );
   };
@@ -84,7 +84,8 @@ class TeamRoster extends React.Component {
             <p>TEAM NAME:</p>
             <p>TEAM OWNER:</p>
           </div>
-          <div>{this.listCoders()}</div>
+        </div>
+        <div>{this.listCoders()}
         </div>
       </div>
     );

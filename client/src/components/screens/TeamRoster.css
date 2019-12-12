@@ -2,6 +2,7 @@
 @media only screen and (max-width: 500px) {
     .teamroster-container {
         height: 100vh;
+
     }
     .home {
         text-decoration: none;
@@ -46,8 +47,13 @@
         margin-top: 5%;
         font-weight: bold;
         font-family: 'Righteous', cursive;
-        height: 35%;
+        height: 35%; 
+    }
 
-        
+    .coderList {
+        border: 2px solid brown;
+        display: flex;
+        justify-content: space-between;
+
     }
 }
