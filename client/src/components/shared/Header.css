@@ -5,8 +5,7 @@
 .header {
     margin: 0 auto;
     color: white;
-    /* opacity: 1; */
-    background-color: #031E48;
+    background-color: #818ea4;
     padding: 2px;
     font-family: 'Press Start 2P', cursive;
 
@@ -16,8 +15,7 @@
 .header {
     margin: 0 auto;
     color: white;
-    opacity: 0.5;
-    background-color: #031E48;
+    background-color: #818ea4;
     padding: 2px;
     font-family: 'Press Start 2P', cursive;
 

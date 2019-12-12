@@ -8,14 +8,19 @@
         color: black;
     }
     .teamroster h1 {
-        font-size: 40px
+        font-size: 40px;
+        color: #00437f
     }
     .availablecoders {
         text-decoration: none;
         color: black;
+        font-size: 18px;
     }
     .teamroster{
-        font-family: 'Righteous', cursive;
+        font-family: 'Righteous', cursive; 
+    }
+    .signout {
+        font-size: 18px;
     }
     hr {
         border-top: 2px solid black
@@ -24,7 +29,6 @@
         display: flex;
         justify-content: space-evenly;
         font-size: 20px;
-
     }
     .rosterlogo {
         height: 50vh;
@@ -47,7 +51,9 @@
         font-weight: bold;
         font-family: 'Righteous', cursive;
         height: 35%;
-
-        
+    }
+    .teamName span {
+        text-decoration: underline;
+        color:#00437f
     }
 }

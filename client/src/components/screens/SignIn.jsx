@@ -1,7 +1,6 @@
 import React from "react";
 import { signInUser } from "../../services/auth";
-import "./SignIn.css";
-// import setUser from "../shared/Container";
+import "./SignIn.css"
 
 class SignIn extends React.Component {
   constructor() {
@@ -25,7 +24,6 @@ class SignIn extends React.Component {
     signInUser(this.state)
       .then(res => {
         setUser(res.user);
-        // history.push(`/users/${res.user.id}/coders`);
         history.push('/')
       })
       .catch(error => {
