@@ -35,10 +35,8 @@ export default class Container extends React.Component {
         console.log(user)
         return (
             <>
-                {/* <TeamRoster user={user} /> */}
                 <main className="container">
                     <Routes
-                        // getCoders={this.getCoders}
                         coders={coders}
                         user={user}
                         setUser={this.setUser}
