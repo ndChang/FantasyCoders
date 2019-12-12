@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
         as: 'userId'
       }
-    }
+    },
+    img: DataTypes.STRING
   }, {});
   Coder.associate = function(models) {
     // associations can be defined here
