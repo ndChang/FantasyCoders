@@ -25,9 +25,15 @@ class AvailableCoders extends React.Component {
   }
 
   renderBotton = id => {
-    return ( 
+    const {user} = this.props
+
+    if(user){
+      return ( 
         <button onClick={() => this.props.history.push(`/`)}>Add to roster</button>
-    )
+    ) 
+    }else{
+      return null
+    }
   }
   renderCoders = () => {
     if (this.state.coders.length) {
