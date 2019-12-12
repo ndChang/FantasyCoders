@@ -29,7 +29,7 @@ const Routes = (user, setUser, coder, clearUser) => (
     />
     <AuthenticatedRoute
       exact
-      path="/teamroster"
+      path="/users/:id/coders"
       user={user}
       render={props => <TeamRoster {...props} user={user} coder = {coder}/>}
     />
