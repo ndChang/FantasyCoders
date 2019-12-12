@@ -72,13 +72,13 @@ class AvailableCoders extends React.Component {
               );
 
 
-          }else {
-              return null
-          }
-       
+        } else {
+          return null
+        }
+
       });
-    }else {
-        return null
+    } else {
+      return null
     }
   };
 
@@ -87,7 +87,7 @@ class AvailableCoders extends React.Component {
     return (
       <>
         {!coders.length ? <h3> All coders hired</h3> : null}
-        <div>{this.renderCoders()}</div>
+        <div className="rendercode">{this.renderCoders()}</div>
       </>
     );
   };
@@ -99,7 +99,9 @@ class AvailableCoders extends React.Component {
         <Header />
          <NavLink to="/">Home</NavLink>
         <h1>Available Coders</h1>
-        {this.listCoders()}
+        <hr></hr>
+       {this.listCoders()}
+    
       </div>
     );
   }
