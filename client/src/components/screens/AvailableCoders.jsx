@@ -36,8 +36,8 @@ class AvailableCoders extends React.Component {
             <div className="coder-container">
               <div className="coder-card" key={coder.id}>
                 <img src={coder.img} alt="profile picture" />
-                <h4>{coder.name}</h4>
-                <h5>{coder.expertise}</h5>
+                <p>{coder.name}</p>
+                <p>{coder.expertise}</p>
                 {this.renderBotton(coder.id)}
               </div>
             </div>
@@ -59,7 +59,7 @@ class AvailableCoders extends React.Component {
     return (
       <>
         {!coders.length ? <h3> All coders hired</h3> : null}
-        <div>{this.renderCoders()}</div>
+        <div className="rendercode">{this.renderCoders()}</div>
       </>
     );
   };
@@ -69,11 +69,9 @@ class AvailableCoders extends React.Component {
     return (
       <div className="availablecoders">
         <h1>Available Coders</h1>
-        <NavLink to="/">Home</NavLink>
-        {/* <NavLink to={`/users/${result.user.id}/coders`}>Team Roster</NavLink> */}
-      <div className = "try" >
-        {this.listCoders()}
-      </div>
+        <hr></hr>
+       {this.listCoders()}
+    
       </div>
     );
   }
