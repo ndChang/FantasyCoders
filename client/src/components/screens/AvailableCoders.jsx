@@ -31,8 +31,8 @@ class AvailableCoders extends React.Component {
     if(user){
       return (
         <button onClick={(e) => {
-          console.log("the user id is",user.id)
-          console.log("the coder id is ", id)
+          // console.log("the user id is",user.id)
+          // console.log("the coder id is ", id)
           updateCoder(id, user).then(()=> console.log("updated coder"))
           this.props.history.push(`/`)
         }}>Add to roster</button>
@@ -44,7 +44,7 @@ class AvailableCoders extends React.Component {
   renderCoders = () => {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
-          if(coder.userId === null){
+          if(coder.userId === null || coder.userId === 0){
             return (
                 <div className="coder-card" key={coder.id}>
                     <img src={coder.img} alt="profile picture"/>

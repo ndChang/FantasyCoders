@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./TeamRoster.css";
 import Axios from "axios";
 import Header from '../shared/Header'
+import {updateCoder} from '../../services/coders'
 
 class TeamRoster extends React.Component {
   constructor() {
@@ -17,7 +18,6 @@ class TeamRoster extends React.Component {
       const response = await Axios.get(
         `http://localhost:3000/api/users/${this.props.user.id}/coders`
       );
-      console.log(response)
       let coders = response.data.userRoster[0].Coders;
       if (coders) {
         this.setState({ coders });
@@ -30,9 +30,12 @@ class TeamRoster extends React.Component {
     }
   }
   renderBotton = id => {
+    const reset = {
+      id: 0
+    }
     return (
-      <button onClick={() => this.props.history.push(`/`)}>
-        Add to roster
+      <button onClick={(e) => {updateCoder(id,reset).then(()=> console.log("updated coder"))}}>
+        Remove from Roster
       </button>
     );
   };
