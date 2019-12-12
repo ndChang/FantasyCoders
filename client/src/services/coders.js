@@ -36,3 +36,12 @@ export const updateCoder = async (coderId, userId) => {
     throw error;
   }
 };
+
+export const removeCoder = async (coderId) => {
+  try {
+    const resp = await api.put(`/users/NULL/coders/${coderId}`);
+    return resp.data.coders;
+  } catch (error) {
+    throw error;
+  }
+}
