@@ -30,6 +30,8 @@ class AvailableCoders extends React.Component {
                   <h5>{coder.expertise}</h5>
                 </div>
               );
+
+              
           }else {
               return null
           }
