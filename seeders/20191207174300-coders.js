@@ -19,6 +19,7 @@ module.exports = {
           name: "Andrew Chang",
           expertise: "Javascript",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -26,6 +27,7 @@ module.exports = {
           name: "Hadeeqa Saman",
           expertise: "Javascript",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -33,6 +35,7 @@ module.exports = {
           name: "Jowel Rosario",
           expertise: "Javascript",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -40,6 +43,7 @@ module.exports = {
           name: "Jeanmax Deslouches",
           expertise: "CSS",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -47,6 +51,7 @@ module.exports = {
           name: "James White",
           expertise: "SQL",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -54,6 +59,7 @@ module.exports = {
           name: "Frenchy French",
           expertise: "Javascript",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -61,6 +67,7 @@ module.exports = {
           name: "Winston White",
           expertise: "Python",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -68,6 +75,7 @@ module.exports = {
           name: "Ipsita Rao",
           expertise: "CSS",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -75,6 +83,7 @@ module.exports = {
           name: "Rakshyak Kc",
           expertise: "Javascript",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -82,6 +91,7 @@ module.exports = {
           name: "Philip Ryan",
           expertise: "React",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -89,6 +99,7 @@ module.exports = {
           name: "Thomas Kang",
           expertise: "CSS",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -96,6 +107,7 @@ module.exports = {
           name: "Roma Patel",
           expertise: "UX/HTML",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -103,6 +115,7 @@ module.exports = {
           name: "Andrew Kim",
           expertise: "Javascript",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -110,6 +123,7 @@ module.exports = {
           name: "Jeremy Rose",
           expertise: "Express",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -117,6 +131,7 @@ module.exports = {
           name: "Melissa Donegan",
           expertise: "CSS",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -124,6 +139,7 @@ module.exports = {
           name: "M.K Irvine",
           expertise: "Fullstack",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -131,6 +147,7 @@ module.exports = {
           name: "Chris Abrams",
           expertise: "Javascript",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -138,6 +155,7 @@ module.exports = {
           name: "Nyesha Viechweg",
           expertise: "UX/CSS",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -145,6 +163,7 @@ module.exports = {
           name: "Jordan Cruz-Correa",
           expertise: "Fullstack",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -152,6 +171,7 @@ module.exports = {
           name: "Yevgeniy Drikman",
           expertise: "Javascript",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -159,6 +179,7 @@ module.exports = {
           name: "Mick Roth",
           expertise: "Fullstack",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -166,6 +187,7 @@ module.exports = {
           name: "Marilyn Shi",
           expertise: "UX/CSS",
           userId: null,
+          img:null,
           createdAt: new Date(),
           updatedAt: new Date()
         }
