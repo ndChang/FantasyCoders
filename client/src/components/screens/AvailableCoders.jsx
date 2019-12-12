@@ -2,14 +2,17 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import './AvailableCoders.css'
+import Header from '../shared/Header'
+import { updateCoder } from '../../services/coders'
 
 
 class AvailableCoders extends React.Component {
   constructor() {
     super();
     this.state = {
-      coders: []
-    };
+      coders: [],
+      updated:false
+    } 
   }
 
   async componentDidMount() {
@@ -23,11 +26,28 @@ class AvailableCoders extends React.Component {
     }
   }
 
-  renderBotton = id => {
+  renderButton = id => {
     return ( 
-        <button onClick={() => this.props.history.push(`teamroster/`)}>Add to roster</button>
+        <button onClick={() => this.handleSubmit}>Add to roster</button>
     )
   }
+
+  handleChange = event => {
+    const updatedField = { [event.target.fullname]: event.target.value }
+
+    const editedItem = Object.assign(this.state.item, updatedField)
+
+    this.setState({ item: editedItem })
+  }
+
+  handleSubmit = event => {
+    // event.preventDefault()
+
+    updateCoder(this.props.params.id)
+      .then(() => this.setStatus({ updated: true }))
+      .catch(console.error)
+  }
+
   renderCoders = () => {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
@@ -37,7 +57,7 @@ class AvailableCoders extends React.Component {
                     <img src={coder.img} alt="profile picture"/>
                   <h4>{coder.name}</h4>
                   <h5>{coder.expertise}</h5>
-                  {this.renderBotton(coder.id)}
+                  {this.renderButton(coder.id)}
                 </div>
               );
 
@@ -66,9 +86,10 @@ class AvailableCoders extends React.Component {
   render() {
     return (
       <div className="availablecoders">
+        <Header />
+         <NavLink to="/">Home</NavLink>
         <h1>Available Coders</h1>
         {this.listCoders()}
-        <NavLink to="/">Home</NavLink>
       </div>
     );
   }
