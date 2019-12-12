@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import './AvailableCoders.css'
 import Header from '../shared/Header'
@@ -33,28 +33,30 @@ class AvailableCoders extends React.Component {
         <button onClick={(e) => {
           console.log("the user id is", user.id)
           console.log("the coder id is ", id)
-          updateCoder(id, user).then(() => console.log("updated coder"))
-          this.props.history.push(`/`)
+          
+          updateCoder(id, user).then(() => {
+            this.forceUpdate()
+            this.props.history.push(`/`)
+        })
         }}>Add to roster</button>
       )
     } else {
       return null
     }
   }
- 
 
   renderCoders = () => {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
-        if (coder.userId === null) {
-          return (
-            <div className="coder-card" key={coder.id}>
-              <img src={coder.img} alt="profile picture" />
-              <h4>{coder.name}</h4>
-              <h5>{coder.expertise}</h5>
-              {this.renderButton(coder.id)}
-            </div>
-          );
+          if(coder.userId === null || coder.userId === 0){
+            return (
+                <div className="coder-card" key={coder.id}>
+                    <img src={coder.img} alt="profile picture"/>
+                  <h4>{coder.name}</h4>
+                  <h5>{coder.expertise}</h5>
+                  {this.renderButton(coder.id)}
+                </div>
+              );
 
 
         } else {

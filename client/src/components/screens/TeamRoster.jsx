@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./TeamRoster.css";
 import Axios from "axios";
-import Header from '../shared/Header'
+import Header from "../shared/Header";
+import { updateCoder } from "../../services/coders";
 
 class TeamRoster extends React.Component {
   constructor() {
@@ -17,7 +18,6 @@ class TeamRoster extends React.Component {
       const response = await Axios.get(
         `http://localhost:3000/api/users/${this.props.user.id}/coders`
       );
-      console.log(response)
       let coders = response.data.userRoster[0].Coders;
       if (coders) {
         this.setState({ coders });
@@ -29,10 +29,21 @@ class TeamRoster extends React.Component {
       console.error(error);
     }
   }
-  renderBotton = id => {
+  renderButton = id => {
+    const reset = {
+      id: 0
+    };
     return (
-      <button onClick={() => this.props.history.push(`/`)}>
-        Add to roster
+      <button
+        onClick={e => {
+          updateCoder(id, reset).then(() => {
+            this.forceUpdate();
+            this.props.history.push('/buffer')
+            this.props.history.push(`/`);
+          });
+        }}
+      >
+        Remove from Roster
       </button>
     );
   };
@@ -40,11 +51,11 @@ class TeamRoster extends React.Component {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
         return (
-          <div className="coder-card" key={coder.id}>
+          <div className="coderList" key={coder.id}>
             <img src={coder.img} alt="profile picture" />
             <h4>{coder.name}</h4>
             <h5>{coder.expertise}</h5>
-            {this.renderBotton(coder.id)}
+            {this.renderButton(coder.id)}
           </div>
         );
       });
@@ -57,7 +68,7 @@ class TeamRoster extends React.Component {
     return (
       <>
         {!coders.length ? <h3> All coders hired</h3> : null}
-        <div>{this.renderCoders()}</div>
+        <div className="coder-container">{this.renderCoders()}</div>
       </>
     );
   };
@@ -85,7 +96,13 @@ class TeamRoster extends React.Component {
             <p><span>TEAM NAME:</span> {this.props.user.email}</p>
             <p><span>TEAM OWNER:</span> {this.props.user.firstName}</p>
           </div>
-          <div>{this.listCoders()}</div>
+        </div>
+        <div className="team-text">
+          <h2>Your TEAM</h2>
+        </div>
+        <hr></hr>
+        <div>{
+          this.listCoders()}
         </div>
       </div>
     );

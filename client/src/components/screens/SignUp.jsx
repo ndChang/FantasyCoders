@@ -26,7 +26,9 @@ class SignUp extends React.Component {
     onSignup = event => {
         event.preventDefault()
         const { history, setUser } = this.props
+        
         signUp(this.state).then(() => signInUser(this.state)).then(res => {setUser(res.user)
+            
             history.push('/')
         })
             .catch(error => {
