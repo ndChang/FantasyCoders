@@ -2,6 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import './AvailableCoders.css'
+import Header from '../shared/Header'
+import {updateCoder} from '../../services/coders'
 
 
 class AvailableCoders extends React.Component {
@@ -23,10 +25,21 @@ class AvailableCoders extends React.Component {
     }
   }
 
-  renderBotton = id => {
-    return ( 
-        <button onClick={() => this.props.history.push(`/`)}>Add to roster</button>
-    )
+  renderButton = id => {
+    const {user} = this.props
+    // console.log("the props are:",this.props)
+    if(user){
+      return (
+        <button onClick={(e) => {
+          console.log("the user id is",user.id)
+          console.log("the coder id is ", id)
+          updateCoder(id, user).then(()=> console.log("updated coder"))
+          this.props.history.push(`/`)
+        }}>Add to roster</button>
+    ) 
+    }else{
+      return null
+    }
   }
   renderCoders = () => {
     if (this.state.coders.length) {
@@ -37,7 +50,7 @@ class AvailableCoders extends React.Component {
                     <img src={coder.img} alt="profile picture"/>
                   <h4>{coder.name}</h4>
                   <h5>{coder.expertise}</h5>
-                  {this.renderBotton(coder.id)}
+                  {this.renderButton(coder.id)}
                 </div>
               );
 
@@ -66,9 +79,10 @@ class AvailableCoders extends React.Component {
   render() {
     return (
       <div className="availablecoders">
+        <Header />
+         <NavLink to="/">Home</NavLink>
         <h1>Available Coders</h1>
         {this.listCoders()}
-        <NavLink to="/">Home</NavLink>
       </div>
     );
   }
