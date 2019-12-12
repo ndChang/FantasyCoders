@@ -28,14 +28,14 @@
 
     }
     .rosterlogo {
-        height: 50vh;
+        height: 40vh;
         display: flex;
         margin-top: 5%;
        
     }
     .teamlogo {
-        height: 40%;
-        width: 40%;
+        height: 70%;
+        width: 70%;
         background: url("../images/rosterlogo.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -54,6 +54,108 @@
         border: 2px solid brown;
         display: flex;
         justify-content: space-between;
+        height: 10vh;
+        margin-bottom: 2%;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+
 
     }
+
+    .coderList img {
+        height: 100%;
+    }
+
+    .coder-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .team-text h2 {
+        margin: auto;
+        padding: auto;
+    }
+}
+
+.teamroster-container {
+    height: 100vh;
+
+}
+.home {
+    text-decoration: none;
+    color: black;
+}
+.teamroster h1 {
+    font-size: 40px
+}
+.availablecoders {
+    text-decoration: none;
+    color: black;
+}
+.teamroster{
+    font-family: 'Righteous', cursive;
+}
+hr {
+    border-top: 2px solid black
+}
+.rosterlinks {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+
+}
+.rosterlogo {
+    height: 40vh;
+    display: flex;
+    margin-top: 5%;
+   
+}
+.teamlogo {
+    height: 50%;
+    width: 40%;
+    background: url("../images/rosterlogo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 2%;
+}
+.teamName{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 5%;
+    font-weight: bold;
+    font-family: 'Righteous', cursive;
+    height: 35%; 
+}
+
+.coderList {
+    border: 2px solid brown;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    margin-bottom: 2%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+
+
+}
+
+.coderList img {
+    height: 100%;
+}
+
+.coder-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.team-text h2 {
+    margin: auto;
+    padding: auto;
 }

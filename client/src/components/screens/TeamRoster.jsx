@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./TeamRoster.css";
 import Axios from "axios";
 import Header from '../shared/Header'
-import {updateCoder} from '../../services/coders'
+import { updateCoder } from '../../services/coders'
 
 class TeamRoster extends React.Component {
   constructor() {
@@ -34,7 +34,7 @@ class TeamRoster extends React.Component {
       id: 0
     }
     return (
-      <button onClick={(e) => {updateCoder(id,reset).then(()=> console.log("updated coder"))}}>
+      <button onClick={(e) => { updateCoder(id, reset).then(() => console.log("updated coder")) }}>
         Remove from Roster
       </button>
     );
@@ -43,7 +43,6 @@ class TeamRoster extends React.Component {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
         return (
-
           <div className="coderList" key={coder.id}>
             <img src={coder.img} alt="profile picture" />
             <h4>{coder.name}</h4>
@@ -87,7 +86,12 @@ class TeamRoster extends React.Component {
             <p>TEAM OWNER:{this.props.user.firstName}</p>
           </div>
         </div>
-        <div>{this.listCoders()}
+        <div className="team-text">
+          <h2>Your TEAM</h2>
+        </div>
+        <hr></hr>
+        <div>{
+          this.listCoders()}
         </div>
       </div>
     );
