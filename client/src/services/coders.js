@@ -1,6 +1,6 @@
 import api from "./apiConfig";
 
-export const getCoderByUserId = async () => {
+export const getCoderByUserId = async (id) => {
   try {
     const resp = await api.get(`/coders/${id}`);
     return resp.data.import;
@@ -28,8 +28,9 @@ export const getCoders = async () => {
 };
 
 export const updateCoder = async (coderId, userId) => {
+  console.log("user id is", userId)
   try {
-    const resp = await api.put(`/coders/${coderId}`, userId);
+    const resp = await api.put(`/users/${userId.id}/coders/${coderId}`);
     return resp.data.coders;
   } catch (error) {
     throw error;

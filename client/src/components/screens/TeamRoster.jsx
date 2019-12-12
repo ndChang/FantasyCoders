@@ -63,7 +63,6 @@ class TeamRoster extends React.Component {
   };
 
   render() {
-
     return (
       <div className="teamroster-container">
         <Header />
