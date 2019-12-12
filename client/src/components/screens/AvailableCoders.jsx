@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import './AvailableCoders.css'
 import Header from '../shared/Header'
@@ -31,10 +31,13 @@ class AvailableCoders extends React.Component {
     if(user){
       return (
         <button onClick={(e) => {
-          console.log("the user id is",user.id)
-          console.log("the coder id is ", id)
-          updateCoder(id, user).then(()=> console.log("updated coder"))
-          this.props.history.push(`/`)
+          // console.log("the user id is",user.id)
+          // console.log("the coder id is ", id)
+          
+          updateCoder(id, user).then(() => {
+            this.forceUpdate()
+            this.props.history.push(`/`)
+        })
         }}>Add to roster</button>
     ) 
     }else{
@@ -61,7 +64,7 @@ class AvailableCoders extends React.Component {
   renderCoders = () => {
     if (this.state.coders.length) {
       return this.state.coders.map(coder => {
-          if(coder.userId === null){
+          if(coder.userId === null || coder.userId === 0){
             return (
                 <div className="coder-card" key={coder.id}>
                     <img src={coder.img} alt="profile picture"/>
@@ -72,13 +75,13 @@ class AvailableCoders extends React.Component {
               );
 
 
-          }else {
-              return null
-          }
-       
+        } else {
+          return null
+        }
+
       });
-    }else {
-        return null
+    } else {
+      return null
     }
   };
 
@@ -87,7 +90,7 @@ class AvailableCoders extends React.Component {
     return (
       <>
         {!coders.length ? <h3> All coders hired</h3> : null}
-        <div>{this.renderCoders()}</div>
+        <div className="rendercode">{this.renderCoders()}</div>
       </>
     );
   };
@@ -99,7 +102,9 @@ class AvailableCoders extends React.Component {
         <Header />
          <NavLink to="/">Home</NavLink>
         <h1>Available Coders</h1>
-        {this.listCoders()}
+        <hr></hr>
+       {this.listCoders()}
+    
       </div>
     );
   }

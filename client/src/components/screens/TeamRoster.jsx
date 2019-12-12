@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./TeamRoster.css";
 import Axios from "axios";
-import Header from '../shared/Header'
+import Header from "../shared/Header";
+import { updateCoder } from "../../services/coders";
 
 class TeamRoster extends React.Component {
   constructor() {
@@ -17,7 +18,6 @@ class TeamRoster extends React.Component {
       const response = await Axios.get(
         `http://localhost:3000/api/users/${this.props.user.id}/coders`
       );
-      console.log(response)
       let coders = response.data.userRoster[0].Coders;
       if (coders) {
         this.setState({ coders });
@@ -30,9 +30,20 @@ class TeamRoster extends React.Component {
     }
   }
   renderBotton = id => {
+    const reset = {
+      id: 0
+    };
     return (
-      <button onClick={() => this.props.history.push(`/`)}>
-        Add to roster
+      <button
+        onClick={e => {
+          updateCoder(id, reset).then(() => {
+            this.forceUpdate();
+            this.props.history.push('/buffer')
+            this.props.history.push(`/`);
+          });
+        }}
+      >
+        Remove from Roster
       </button>
     );
   };
@@ -76,13 +87,12 @@ class TeamRoster extends React.Component {
               Available Coders
             </NavLink>
           </div>
-          <hr></hr>
         </div>
         <div className="rosterlogo">
           <div className="teamlogo"></div>
           <div className="teamName">
-            <p>TEAM NAME:</p>
-            <p>TEAM OWNER:</p>
+            <p>TEAM NAME: {this.props.user.email}</p>
+            <p>TEAM OWNER:{this.props.user.firstName}</p>
           </div>
           <div>{this.listCoders()}</div>
         </div>
