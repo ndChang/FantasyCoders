@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+@media only screen and (max-width: 500px) {
+    .teamroster-container {
+        height: 100vh;
+    }
+    .home {
+        text-decoration: none;
+        color: black;
+    }
+    .teamroster h1 {
+        font-size: 40px
+    }
+    .availablecoders {
+        text-decoration: none;
+        color: black;
+    }
+    .teamroster{
+        /* border: 1px solid black; */
+        font-family: 'Righteous', cursive;
+    }
+    hr {
+        border-top: 2px solid black
+    }
+    .rosterlinks {
+        /* border: 2px solid purple; */
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 20px;
+
+    }
+    .rosterlogo {
+        /* border: 2px solid blue; */
+        height: 50vh;
+        display: flex;
+        margin-top: 5%;
+       
+    }
+    .teamlogo {
+        /* border: 2px solid red; */
+        height: 40%;
+        width: 40%;
+        background: url("../images/rosterlogo.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .teamName{
+        /* border: 1px solid orange; */
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+        margin-top: 5%;
+        font-weight: bold;
+        font-family: 'Righteous', cursive;
+        height: 35%;
+
+        
+    }
+}
