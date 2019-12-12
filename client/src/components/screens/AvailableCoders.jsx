@@ -3,39 +3,67 @@ import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import './AvailableCoders.css'
 
+
 class AvailableCoders extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            coders: []
-        }
+  constructor() {
+    super();
+    this.state = {
+      coders: []
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const response = await axios.get(`http://localhost:3000/api/coders`);
+      this.setState({ coders: response.data.coders }, () =>
+        console.log(this.state.coders)
+      );
+    } catch (err) {
+      console.error(err);
     }
-
-    async componentDidMount() {
-        try {
-            const response = await axios.get(`http://localhost:3000/api/coders`)
-            this.setState({ coders: response.data.coders },  ()=> console.log(this.state.coders))
-        } catch (err) {
-            console.error(err)
-        }
-    }
-
-
-
-    render() {
-        return (
-            <div className="availablecoders">
-                <h1>Available Coders</h1>
-                <NavLink to='/'>Home</NavLink>
-                <div className="coder-card">
-                    <h2>image</h2>
-                    <h1>fullname</h1>
-                    <h2>expertise</h2>
+  }
+  renderCoders = () => {
+    if (this.state.coders.length) {
+      return this.state.coders.map(coder => {
+          if(coder.userId === null){
+            return (
+                <div key={coder.id}>
+                  <h4>{coder.name}</h4>
+                  <h5>{coder.expertise}</h5>
                 </div>
-            </div>
-        )
+              );
 
+              
+          }else {
+              return null
+          }
+       
+      });
+    }else {
+        return null
     }
+  };
+
+  listCoders = () => {
+    const { coders } = this.state;
+    return (
+      <>
+        {!coders.length ? <h3> All coders hired</h3> : null}
+        <div>{this.renderCoders()}</div>
+      </>
+    );
+  };
+
+
+  render() {
+    return (
+      <div className="availablecoders">
+        <h1>Available Coders</h1>
+        {this.listCoders()}
+        <NavLink to="/">Home</NavLink>
+      </div>
+    );
+  }
 }
 
-export default AvailableCoders
+export default AvailableCoders;
