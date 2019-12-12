@@ -94,7 +94,7 @@ module.exports = {
         },
         {
           name: "Roma Patel",
-          expertise: "HTML",
+          expertise: "UX/HTML",
           userId: null,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -136,7 +136,7 @@ module.exports = {
         },
         {
           name: "Nyesha Viechweg",
-          expertise: "CSS",
+          expertise: "UX/CSS",
           userId: null,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -158,6 +158,13 @@ module.exports = {
         {
           name: "Mick Roth",
           expertise: "Fullstack",
+          userId: null,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Marilyn Shi",
+          expertise: "UX/CSS",
           userId: null,
           createdAt: new Date(),
           updatedAt: new Date()
