@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import './AvailableCoders.css'
 import Header from '../shared/Header'
-import { updateCoder } from '../../services/coders'
+import {updateCoder} from '../../services/coders'
 
 
 class AvailableCoders extends React.Component {
@@ -27,9 +27,19 @@ class AvailableCoders extends React.Component {
   }
 
   renderButton = id => {
-    return ( 
-        <button onClick={() => this.handleSubmit}>Add to roster</button>
-    )
+    const {user} = this.props
+    if(user){
+      return (
+        <button onClick={(e) => {
+          console.log("the user id is",user.id)
+          console.log("the coder id is ", id)
+          updateCoder(id, user).then(()=> console.log("updated coder"))
+          this.props.history.push(`/`)
+        }}>Add to roster</button>
+    ) 
+    }else{
+      return null
+    }
   }
 
   handleChange = event => {
