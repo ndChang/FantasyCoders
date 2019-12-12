@@ -66,9 +66,9 @@ class AvailableCoders extends React.Component {
   render() {
     return (
       <div className="availablecoders">
+         <NavLink to="/">Home</NavLink>
         <h1>Available Coders</h1>
         {this.listCoders()}
-        <NavLink to="/">Home</NavLink>
       </div>
     );
   }
