@@ -12,12 +12,11 @@ class TeamRoster extends React.Component {
   }
 
   async componentDidMount() {
-    console.log(this.props.history.location.pathname);
-    // /users/5/coders
     try {
       const response = await Axios.get(
-        `http://localhost:3000/api${this.props.history.location.pathname}`
+        `http://localhost:3000/api/users/${this.props.user.id}/coders`
       );
+      console.log(response)
       let coders = response.data.userRoster[0].Coders;
       if (coders) {
         this.setState({ coders });
@@ -62,33 +61,33 @@ class TeamRoster extends React.Component {
     );
   };
 
-    render() {
-        return (
-            <div className="teamroster-container">
-                <div className="teamroster">
-                    <h1>TEAM ROSTER</h1>
-                    <div className="rosterlinks">
-                        <NavLink className="home" to='/'>Home</NavLink>
-                        <NavLink className="availablecoders" to='/availablecoders'>Available Coders</NavLink>
-                    </div>
-                    <hr></hr>
-                </div>
-                <div className="rosterlogo">
-                    <div className="teamlogo">
-                    </div>
-                    <div className="teamName">
-                        <p>TEAM NAME:</p>
-                        <p>TEAM OWNER:</p>
-                    </div>
-                    <div>{this.listCoders()}</div>
-                </div>
-            </div>
-        )
-    }
+  render() {
 
-
-
-
+    return (
+      <div className="teamroster-container">
+        <div className="teamroster">
+          <h1>TEAM ROSTER</h1>
+          <div className="rosterlinks">
+            <NavLink className="home" to="/">
+              Home
+            </NavLink>
+            <NavLink className="availablecoders" to="/availablecoders">
+              Available Coders
+            </NavLink>
+          </div>
+          <hr></hr>
+        </div>
+        <div className="rosterlogo">
+          <div className="teamlogo"></div>
+          <div className="teamName">
+            <p>TEAM NAME:</p>
+            <p>TEAM OWNER:</p>
+          </div>
+          <div>{this.listCoders()}</div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default TeamRoster;
