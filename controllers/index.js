@@ -113,11 +113,13 @@ const getRosterFromUser = async (req, res) => {
   const updateRoster = async (req,res) => {
     console.log("update feature")
     try {
+      console.log(req.params)
       const coder = await Coder.update(
         {
           userId: req.params.id
-        }
-        ,{
+        },
+        {
+          
         where: {
           id: req.params.coder_id
         }
