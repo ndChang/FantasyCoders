@@ -1,9 +1,18 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Axios from 'axios'
 
 class TeamRoster extends React.Component {
     constructor() {
-        super()
+        super();
+        this.state = {
+            coders: []
+        }
+    }
+
+    async componentDidMount() {
+        // const coders = await Axios.get(`/users/1/coders`)
+        // console.log(coders)
     }
     render() {
         return (

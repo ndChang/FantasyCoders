@@ -2,10 +2,7 @@ import api from './apiConfig'
 
 export const signUp = async credentials => {
     try {
-        console.log(credentials)
-
         const resp = await api.post('/sign-up', credentials)
-        console.log(resp)   
         // localStorage.setItem('token', resp.data.token)
         return resp.data
     } catch (error) {
@@ -17,6 +14,7 @@ export const signInUser = async credentials => {
     try {
         const resp = await api.post('/sign-in', credentials)
         localStorage.setItem('token', resp.data.token)
+        console.log(resp.data)
         return resp.data
     } catch (error) {
         throw error
@@ -31,3 +29,4 @@ export const signOut = async user => {
         throw error
     }
 }
+

@@ -31,7 +31,6 @@ const signUp = async (req, res) => {
 };
 const signIn = async (req, res) => {
   try {
-    console.log(req.body);
     const { email, password } = req.body;
     const user = await User.findOne({
       where: {
@@ -44,7 +43,7 @@ const signIn = async (req, res) => {
         email: user.email
       };
       const token = jwt.sign(payload, TOKEN_KEY);
-      return res.status(201).json({ user, token });
+      return res.status(201).json({ user, token});
     } else {
       res.status(401).send("Invalid Credentials");
     }
@@ -77,7 +76,6 @@ const getRosterFromUser = async (req, res) => {
   const getCoderById = async (req, res) => {
     try {
       const { id} = req.params
-      console.log(id)
       const coder = await Coder.findOne({
         where: {
           rosterId: id

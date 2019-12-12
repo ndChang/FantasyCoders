@@ -19,11 +19,8 @@ class SignIn extends React.Component {
     }
     onSignIn = event => {
         event.preventDefault()
-        const { history,  } = this.props
-
-        signInUser(this.state)
-            // .then(res => setUser(res.user))
-            .then(() => history.push('/teamroster'))
+        const { history,  } = this.props    
+        signInUser(this.state).then((result) => history.push(`/teamroster/${result.user.id}`))
             .catch(error => {
                 console.error(error)
                 this.setState({
