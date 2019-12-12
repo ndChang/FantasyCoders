@@ -31,8 +31,8 @@ class AvailableCoders extends React.Component {
     if(user){
       return (
         <button onClick={(e) => {
-          // console.log("the user id is",user.id)
-          // console.log("the coder id is ", id)
+          console.log("the user id is",user.id)
+          console.log("the coder id is ", id)
           
           updateCoder(id, user).then(() => {
             this.forceUpdate()
@@ -43,22 +43,6 @@ class AvailableCoders extends React.Component {
     }else{
       return null
     }
-  }
-
-  handleChange = event => {
-    const updatedField = { [event.target.fullname]: event.target.value }
-
-    const editedItem = Object.assign(this.state.item, updatedField)
-
-    this.setState({ item: editedItem })
-  }
-
-  handleSubmit = event => {
-    // event.preventDefault()
-
-    updateCoder(this.props.params.id)
-      .then(() => this.setStatus({ updated: true }))
-      .catch(console.error)
   }
 
   renderCoders = () => {
