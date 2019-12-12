@@ -5,13 +5,22 @@ import SignIn from "../screens/SignIn";
 import TeamRoster from "../screens/TeamRoster";
 import AvailableCoders from "../screens/AvailableCoders";
 import SignUp from "../screens/SignUp";
-import AuthenticatedRoute from './AuthenticatedRoute'
-import SignOut from '../screens/SignOut'
+import AuthenticatedRoute from "./AuthenticatedRoute";
+import SignOut from "../screens/SignOut";
 
-const Routes = (user, setUser, coder, clearUser) => (
+const Routes = ({ user, setUser, coder, clearUser }) => (
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/availablecoders" component={AvailableCoders} />
+    {/* <Route
+      exact
+      path="/"
+      render={props => (user ? <TeamRoster {...props} /> : <Home />)}
+    /> */}
+     <Route
+      exact
+      path="/"
+      render={props => (user ? <TeamRoster {...props} user={user} coder = {coder}/> : <Home />)}
+    />
+    <Route exact path="/availablecoders" render= {props => (user ? <AvailableCoders {...props} user={user}/> : <AvailableCoders />)}/>
     <Route
       exact
       path="/sign-up"
@@ -20,20 +29,20 @@ const Routes = (user, setUser, coder, clearUser) => (
     <Route
       exact
       path="/sign-in"
-      render={props => <SignIn {...props} setUser={setUser} />}
+      render={props => <SignIn {...props} setUser={setUser} user={user} />}
     />
     <Route
       exact
       path="/sign-out"
       render={props => <SignOut {...props} clearUser={clearUser} user={user} />}
     />
-    <AuthenticatedRoute
+    {/* <AuthenticatedRoute
       exact
-      path="/teamroster"
+      path="/users/:id/coders"
       user={user}
       render={props => <TeamRoster {...props} user={user} coder = {coder}/>}
-    />
+    /> */}
   </Switch>
 );
 
-export default Routes
+export default Routes;
