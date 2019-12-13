@@ -34,8 +34,8 @@ class SignUp extends React.Component {
             .catch(error => {
                 console.error(error)
                 this.setState({
-                    firstName: '',
-                    lastName: '',
+                    name: '',
+                    product: '',
                     email: '',
                     password: '',
                     isError: true,
@@ -57,32 +57,32 @@ class SignUp extends React.Component {
             return <button className="signup" type="submit">Sign Up</button>
     }
     render() {
-        const { firstName, lastName, email, password } = this.state
+        const { name, product, email, password } = this.state
         return (
             <div className="signup-container">  
                 <div className="signup-form">
                     <h3>Sign Up</h3>
                     <div className="input-form">
                     <form onSubmit={this.onSignup}>
-                        <label>First Name </label>
+                        <label>Name </label>
                         <input
                             className="form-styling"
                             required
                             type="text"
-                            name="firstName"
-                            value={firstName}
-                            placeholder="First Name"
+                            name="name"
+                            value={name}
+                            placeholder="Full Name"
                             onChange={this.handleChange}
                         />
 
-                        <label>Last Name </label>
+                        <label>Product Name</label>
                         <input
                             className="form-styling"
                             required
                             type="text"
-                            name="lastName"
-                            value={lastName}
-                            placeholder="Last Name"
+                            name="product"
+                            value={product}
+                            placeholder="Product Name"
                             onChange={this.handleChange}
                         />
 
