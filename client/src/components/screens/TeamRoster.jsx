@@ -33,7 +33,7 @@ class TeamRoster extends React.Component {
       id: 0
     };
     return (
-      <button className= "rosterrenderbtn"
+      <button className="rosterrenderbtn"
         onClick={e => {
           updateCoder(id, reset).then(() => {
             this.forceUpdate();
@@ -51,7 +51,9 @@ class TeamRoster extends React.Component {
       return this.state.coders.map(coder => {
         return (
           <div className="coderList" key={coder.id}>
-            {(coder.expertise === "UX/CSS"  || coder.expertise  === "UX/HTML")? <h1>Design</h1>: (coder.expertise === "React"  || coder.expertise  === "CSS")? <h1>Front End</h1>: <h1>Back End</h1>}
+            <div className="job-title">
+              {(coder.expertise === "UX/CSS" || coder.expertise === "UX/HTML") ? <h1>Design</h1> : (coder.expertise === "React" || coder.expertise === "CSS") ? <h1>Front End</h1> : <h1>Back End</h1>}
+            </div>
             <img src={coder.img} alt="profile picture" />
             <h4>{coder.name}</h4>
             <h5>{coder.expertise}</h5>
@@ -80,12 +82,12 @@ class TeamRoster extends React.Component {
         this.state.coders[i].expertise === "UX/CSS" ||
         this.state.coders[i].expertise === "UX/HTML"
       ) {
-       ux = true;
+        ux = true;
       }
     }
-      if (!ux) {
-        return <p>Grab a Ux designer</p>;
-      }
+    if (!ux) {
+      return <p>Grab a Ux designer</p>;
+    }
   };
   hasFe = () => {
     let length = this.state.coders.length;
@@ -95,7 +97,7 @@ class TeamRoster extends React.Component {
         this.state.coders[i].expertise === "React" ||
         this.state.coders[i].expertise === "CSS"
       ) {
-       fe = true;
+        fe = true;
       }
     }
     if (!fe) {
@@ -112,7 +114,7 @@ class TeamRoster extends React.Component {
         this.state.coders[i].expertise === "Python" ||
         this.state.coders[i].expertise === "Javascript"
       ) {
-       return be = true;
+        return be = true;
       }
     }
     if (!be) {
@@ -120,7 +122,7 @@ class TeamRoster extends React.Component {
     }
   };
   render() {
-    if(!this.state.coders){
+    if (!this.state.coders) {
       console.log(this.state.coders[0].expertise)
 
     }
@@ -151,9 +153,9 @@ class TeamRoster extends React.Component {
           </div>
         </div>
         <div className="team-text">
-      {this.hasUx()}
-      {this.hasFe()}
-      {this.hasBe()}
+          {this.hasUx()}
+          {this.hasFe()}
+          {this.hasBe()}
 
           <h2>Your TEAM</h2>
         </div>
