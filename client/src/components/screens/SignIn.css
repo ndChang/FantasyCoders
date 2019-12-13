@@ -1,13 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide|Press+Start+2P&display=swap');
 
 @media only screen and (max-width: 500px) {
+    
+    .signin-container {
+        width: 100%;
+        padding-top: 20%;
+    }
+    
+    .signin-form {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 70%;
+        background:
+            linear-gradient(
+            #031E48, #031E48);
+        background-size: cover;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: solid 1px rgba(255,255,255,.5);
+        border-radius: 5px;
+        box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
+        overflow: hidden;
+        transition: all .5s ease;
+    
+    }
+    
+    .btn-signin {
+        float: left;
+        padding-top: 8px;
+        width: 50%;
+        height: 35px;
+        border: none;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
 
 }
 
 .signin-container {
     width: 100%;
-    padding-top: 60px;
-    padding-bottom: 100px;
+    padding-top: 20%;
 }
 
 .signin-form {
