@@ -34,7 +34,7 @@ class TeamRoster extends React.Component {
     };
     return (
       <button
-        className="rosterrenderbtn"
+        className="remove-coder"
         onClick={e => {
           updateCoder(id, reset).then(() => {
             this.forceUpdate();
@@ -55,7 +55,7 @@ class TeamRoster extends React.Component {
     }
     return (
     <button
-        className="rosterrenderbtn"
+        className="raise-coder"
         onClick={e => {
           trainCoder(id, raise).then(() => {
             this.props.history.push("/buffer");
@@ -63,7 +63,7 @@ class TeamRoster extends React.Component {
           });
         }}
       >
-        A
+        Train Team Member
       </button>
     )
   }

@@ -274,6 +274,16 @@ module.exports = {
           img:"https://media.licdn.com/dms/image/C4D03AQHO9A4Z2iJQYw/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=ECZ4Xn86D2cYyYNb7_pNZr-ysrkW_x0ZuHh9iPA6XV0",
           createdAt: new Date(),
           updatedAt: new Date()
+        },
+        {
+          name: "Jane Cogger",
+          expertise: "Javascript",
+          salary: Math.random()*150000,
+          efficency: .45,
+          userId: null,
+          img:"https://media.licdn.com/dms/image/C4E03AQGhfAqMM9pPzw/profile-displayphoto-shrink_200_200/0?e=1581552000&v=beta&t=Yhcf1QnxEIjVzauMmGsvxMQSKteSs7jcz_Lp8kdkwWo",
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}
