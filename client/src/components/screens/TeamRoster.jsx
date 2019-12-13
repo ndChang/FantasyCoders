@@ -33,7 +33,7 @@ class TeamRoster extends React.Component {
       id: 0
     };
     return (
-      <button
+      <button className= "rosterrenderbtn"
         onClick={e => {
           updateCoder(id, reset).then(() => {
             this.forceUpdate();
@@ -42,7 +42,7 @@ class TeamRoster extends React.Component {
           });
         }}
       >
-        Remove from Roster
+        X
       </button>
     );
   };
@@ -127,10 +127,7 @@ class TeamRoster extends React.Component {
         <div className="teamroster">
           <h1>TEAM ROSTER</h1>
           <div className="rosterlinks">
-            <NavLink className="home" to="/">
-              Home
-            </NavLink>
-            <NavLink className="availablecoders" to="/availablecoders">
+            <NavLink className="availablecoderslink" to="/availablecoders">
               Available Coders
             </NavLink>
             <NavLink className="signout" to="/sign-out">
