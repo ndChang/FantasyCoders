@@ -51,6 +51,7 @@ class TeamRoster extends React.Component {
       return this.state.coders.map(coder => {
         return (
           <div className="coderList" key={coder.id}>
+            {(coder.expertise === "UX/CSS"  || coder.expertise  === "UX/HTML")? <h1>Design</h1>: (coder.expertise === "React"  || coder.expertise  === "CSS")? <h1>Front End</h1>: <h1>Back End</h1>}
             <img src={coder.img} alt="profile picture" />
             <h4>{coder.name}</h4>
             <h5>{coder.expertise}</h5>
@@ -107,7 +108,9 @@ class TeamRoster extends React.Component {
     for (let i = 0; i < length; i++) {
       if (
         this.state.coders[i].expertise === "SQL" ||
-        this.state.coders[i].expertise === "Express"
+        this.state.coders[i].expertise === "Express" ||
+        this.state.coders[i].expertise === "Python" ||
+        this.state.coders[i].expertise === "Javascript"
       ) {
        return be = true;
       }
