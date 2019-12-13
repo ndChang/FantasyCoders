@@ -279,3 +279,7 @@ hr {
     transform: rotate(180deg);
     text-align: center;
 }
+
+svg{
+    max-width: 10vw;
+}
