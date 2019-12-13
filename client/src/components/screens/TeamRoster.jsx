@@ -83,7 +83,8 @@ class TeamRoster extends React.Component {
       }
     }
       if (!ux) {
-        return <p>Grab a Ux designer</p>;
+        return <p className="UX">Grab a UX designer!</p>;
+     
       }
   };
   hasFe = () => {
@@ -98,7 +99,7 @@ class TeamRoster extends React.Component {
       }
     }
     if (!fe) {
-      return <p>Grab a front end dev</p>;
+      return <p className="front">Grab a front end developer!</p>;
     }
   };
   hasBe = () => {
@@ -113,7 +114,7 @@ class TeamRoster extends React.Component {
       }
     }
     if (!be) {
-      return <p>Grab a back end dev</p>;
+      return <p className="back">Grab a back end developer!</p>;
     }
   };
   render() {
@@ -152,7 +153,7 @@ class TeamRoster extends React.Component {
       {this.hasFe()}
       {this.hasBe()}
 
-          <h2>Your TEAM</h2>
+          <h2 className="yourname">YOUR TEAM:</h2>
         </div>
         <hr></hr>
         <div>{this.listCoders()}</div>

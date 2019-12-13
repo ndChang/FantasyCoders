@@ -102,8 +102,44 @@
         margin: auto;
         padding: auto;
     }
+    .UX {
+        border: 2px solid #00437f;
+        font-size: 25px;
+        font-weight: bold; 
+    }
+    .front {
+        border: 2px solid #00437f;
+        font-size: 25px;
+        font-weight: bold; 
+    }
+    .back {
+        border: 2px solid #00437f;
+        font-size: 25px;
+        font-weight: bold; 
+    }
+    .yourname {
+        color:#00437f
+    }
+   
 }
-
+.UX {
+    border: 2px solid #00437f;
+    font-size: 25px;
+    font-weight: bold; 
+}
+.front {
+    border: 2px solid #00437f;
+    font-size: 25px;
+    font-weight: bold; 
+}
+.back {
+    border: 2px solid #00437f;
+    font-size: 25px;
+    font-weight: bold; 
+}
+.yourname {
+    color:#00437f
+}
 .teamroster-container {
     height: 100vh;
 
