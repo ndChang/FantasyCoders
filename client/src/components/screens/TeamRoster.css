@@ -339,9 +339,11 @@ hr {
     text-align: center;
 }
 
+
 svg{
     max-width: 10vw;
 }
+
 .raise-coder {
     appearance: none;
     background-color: transparent;
