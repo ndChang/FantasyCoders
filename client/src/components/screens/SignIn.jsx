@@ -1,10 +1,8 @@
 import React from "react";
 import { signInUser } from "../../services/auth";
 import "./SignIn.css";
-import {NavLink} from 'react-router-dom'
-import Header from '../shared/Header'
-
-
+import { NavLink } from "react-router-dom";
+import Header from "../shared/Header";
 
 class SignIn extends React.Component {
   constructor() {
@@ -28,7 +26,7 @@ class SignIn extends React.Component {
     signInUser(this.state)
       .then(res => {
         setUser(res.user);
-        history.push('/')
+        history.push("/");
       })
       .catch(error => {
         console.error(error);
@@ -62,42 +60,44 @@ class SignIn extends React.Component {
     const { email, password } = this.state;
 
     return (
-      <div className="signUp-page" >
-      <Header />
-        <div className= "navDiv">
-       <NavLink className="home" to="/">
-              Home
-            </NavLink>
-      <NavLink className="signUp" to='/sign-up'>Sign Up</NavLink>
-      </div>
-      <div className="signin-container">
-        <div className="signin-form">
-          <h3>Sign In</h3>
-          <form onSubmit={this.onSignIn}>
-            <label>Email</label>
-            <input
-              className="form-styling"
-              required
-              type="text"
-              name="email"
-              value={email}
-              placeholder="Enter Email"
-              onChange={this.handleChange}
-            />
-            <label>Password</label>
-            <input
-              className="form-styling"
-              required
-              name="password"
-              value={password}
-              type="password"
-              placeholder="Password"
-              onChange={this.handleChange}
-            />
-            {this.renderError()}
-          </form>
+      <div className="signUp-page">
+        <Header />
+        <div className="navDiv">
+          <NavLink className="home" to="/">
+            Home
+          </NavLink>
+          <NavLink className="signUp" to="/sign-up">
+            Sign Up
+          </NavLink>
         </div>
-      </div>
+        <div className="signin-container">
+          <div className="signin-form">
+            <h3>Sign In</h3>
+            <form onSubmit={this.onSignIn}>
+              <label>Email</label>
+              <input
+                className="form-styling"
+                required
+                type="text"
+                name="email"
+                value={email}
+                placeholder="Enter Email"
+                onChange={this.handleChange}
+              />
+              <label>Password</label>
+              <input
+                className="form-styling"
+                required
+                name="password"
+                value={password}
+                type="password"
+                placeholder="Password"
+                onChange={this.handleChange}
+              />
+              {this.renderError()}
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
